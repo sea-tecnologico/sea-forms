@@ -38,6 +38,7 @@ public class MainGenerator {
         cliente.addStringProperty("CliNombre").notNull();
         cliente.addStringProperty("CliApellido1").notNull();
         cliente.addStringProperty("CliApellido2");
+        cliente.addStringProperty("CliEmail");
         cliente.addStringProperty("CliSexo").notNull();
         cliente.addDateProperty("CliFechaNacimiento").notNull();
         cliente.addStringProperty("CliTelCasa");
