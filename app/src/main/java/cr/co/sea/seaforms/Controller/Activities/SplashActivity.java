@@ -1,10 +1,9 @@
-package cr.co.sea.seaforms.Controller;
+package cr.co.sea.seaforms.Controller.Activities;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.Menu;
 
 import cr.co.sea.seaforms.R;
 

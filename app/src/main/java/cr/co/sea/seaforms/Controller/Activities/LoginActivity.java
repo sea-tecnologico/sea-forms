@@ -1,4 +1,4 @@
-package cr.co.sea.seaforms.Controller;
+package cr.co.sea.seaforms.Controller.Activities;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

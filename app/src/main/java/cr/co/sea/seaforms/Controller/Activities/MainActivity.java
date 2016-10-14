@@ -1,5 +1,6 @@
-package cr.co.sea.seaforms.Controller;
+package cr.co.sea.seaforms.Controller.Activities;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -13,7 +14,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 
+import com.telerik.widget.dataform.visualization.DataFormGroupLayoutManager;
+import com.telerik.widget.dataform.visualization.RadDataForm;
+
+import cr.co.sea.seaforms.Controller.Fragments.ClienteFormFragment;
+import cr.co.sea.seaforms.Controller.Fragments.MainFragment;
+import cr.co.sea.seaforms.Model.Cliente;
 import cr.co.sea.seaforms.R;
 
 public class MainActivity extends AppCompatActivity
@@ -43,6 +51,9 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        FragmentManager fm = getFragmentManager();
+        fm.beginTransaction().replace(R.id.content_frame, new MainFragment()).commit();
     }
 
     @Override
@@ -82,18 +93,23 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+        FragmentManager fm = getFragmentManager();
         if (id == R.id.nav_camera) {
-            Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+            /*Inicio*/
+            fm.beginTransaction().replace(R.id.content_frame, new MainFragment()).commit();
+            /*Login*/
+            /*Intent i = new Intent(getApplicationContext(), LoginActivity.class);
             //Fire that second activity
-            startActivity(i);
+            startActivity(i);*/
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
+            fm.beginTransaction().replace(R.id.content_frame, new ClienteFormFragment()).commit();
+
         } else if (id == R.id.nav_slideshow) {
-            Intent i = new Intent(getApplicationContext(), ClienteActivity.class);
+            //Intent i = new Intent(getApplicationContext(), ClienteActivity.class);
             //Fire that second activity
-            startActivity(i);
+           // startActivity(i);
 
         } else if (id == R.id.nav_manage) {
 
