@@ -89,9 +89,6 @@ public class MainActivity extends AppCompatActivity
             startActivity(i);
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
-            Intent i = new Intent(getApplicationContext(), ActivityForm1.class);
-            //Fire that second activity
-            startActivity(i);
 
         } else if (id == R.id.nav_slideshow) {
             Intent i = new Intent(getApplicationContext(), ClienteActivity.class);

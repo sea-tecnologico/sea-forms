@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ViewGroup;
 
+import com.telerik.widget.dataform.visualization.DataFormGroupLayoutManager;
 import com.telerik.widget.dataform.visualization.RadDataForm;
 
 import cr.co.sea.seaforms.Model.Cliente;
@@ -18,6 +19,7 @@ public class ClienteActivity extends AppCompatActivity {
         ViewGroup rootView = (ViewGroup) findViewById(R.id.activity_cliente);
         RadDataForm form = new RadDataForm(this.getBaseContext());
         form.setEntity(new Cliente());
+        form.setLayoutManager(new DataFormGroupLayoutManager(this.getBaseContext()));
         rootView.addView(form);
     }
 }

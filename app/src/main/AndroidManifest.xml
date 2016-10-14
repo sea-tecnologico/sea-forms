@@ -21,9 +21,6 @@
             android:name=".Controller.LoginActivity"
             android:label="@string/title_activity_login">
         </activity>
-        <activity
-            android:name=".Controller.ActivityForm1"
-            android:label="@string/title_activity_form1" />
         <activity android:name=".Controller.ClienteActivity" />
         <activity
             android:name=".Controller.SplashActivity"
