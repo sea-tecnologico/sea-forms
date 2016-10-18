@@ -4,7 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SEAForms.iml" filepath="$PROJECT_DIR$/SEAForms.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/greendao-gen/greendao-gen.iml" filepath="$PROJECT_DIR$/greendao-gen/greendao-gen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/greendao-gen/greendao-gen.iml" filepath="$PROJECT_DIR$/greendao-gen/greendao-gen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sea-forms.iml" filepath="$PROJECT_DIR$/sea-forms.iml" />
     </modules>
   </component>
 </project>
