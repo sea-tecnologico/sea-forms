@@ -22,6 +22,10 @@
             android:label="@string/title_activity_login">
         </activity>
         <activity
+            android:name=".Controller.Activities.TabFormActivity"
+            android:label="@string/title_activity_tab_form">
+        </activity>
+        <activity
             android:name=".Controller.Activities.SplashActivity"
             android:label="@string/title_activity_splash"
             android:theme="@style/AppTheme.NoActionBar">

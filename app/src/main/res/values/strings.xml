@@ -4,6 +4,7 @@
     <string name="navigation_drawer_open">Abrir menú de navegación</string>
     <string name="navigation_drawer_close">Cerrar menú de navegación</string>
 
+    <string name="title_activity_tab_form">Formulario con tabs</string>
     <string name="action_settings">Configuraciones</string>
     <string name="title_activity_login">Ingresar</string>
 

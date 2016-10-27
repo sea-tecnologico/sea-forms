@@ -42,49 +42,7 @@ public class ClienteFormFragment extends Fragment {
         form.setEntity(new Cliente());
         form.setLayoutManager(new DataFormGroupLayoutManager(this.getActivity().getBaseContext()));
         rootView.addView(form);
-
-        /****************/
-
-        // The files person_extended.json and person_schema.json are
-// in the res/raw folder of the project
-       /* RadDataForm form = new RadDataForm(this.getActivity().getBaseContext());
-        String json = loadJSONFromAsset(R.raw.person);
-
-        try {
-            JSONObject jsonObject = new JSONObject(json);
-            form.setEntity(jsonObject);
-
-            String schema = loadJSONFromAsset(R.raw.person);
-            JSONObject jsonSchema = new JSONObject(schema);
-            DataFormMetadata metadata = new DataFormMetadata(jsonSchema);
-            form.setMetadata(metadata);
-        } catch (JSONException e) {
-            Log.e("json", "error parsing json", e);
-        }
-        rootView.addView(form);*/
         return  rootView;
     }
-    private String loadJSONFromAsset(int asset) {
-        String json;
-        try {
-            InputStream is = getResources().openRawResource(asset);
-            Writer writer = new StringWriter();
-            char[] buffer = new char[1024];
-            try {
-                Reader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
-                int n;
-                while ((n = reader.read(buffer)) != -1) {
-                    writer.write(buffer, 0, n);
-                }
-            } finally {
-                is.close();
-            }
 
-            json = writer.toString();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-        return json;
-    }
 }

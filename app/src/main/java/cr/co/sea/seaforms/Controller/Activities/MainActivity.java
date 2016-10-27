@@ -20,6 +20,7 @@ import com.telerik.widget.dataform.visualization.DataFormGroupLayoutManager;
 import com.telerik.widget.dataform.visualization.RadDataForm;
 
 import cr.co.sea.seaforms.Controller.Fragments.ClienteFormFragment;
+import cr.co.sea.seaforms.Controller.Fragments.CustomFormFragment;
 import cr.co.sea.seaforms.Controller.Fragments.MainFragment;
 import cr.co.sea.seaforms.Model.Cliente;
 import cr.co.sea.seaforms.R;
@@ -96,7 +97,7 @@ public class MainActivity extends AppCompatActivity
         FragmentManager fm = getFragmentManager();
         if (id == R.id.nav_camera) {
             /*Inicio*/
-            fm.beginTransaction().replace(R.id.content_frame, new MainFragment()).commit();
+            fm.beginTransaction().replace(R.id.content_frame, new CustomFormFragment()).commit();
             /*Login*/
             /*Intent i = new Intent(getApplicationContext(), LoginActivity.class);
             //Fire that second activity
@@ -107,9 +108,9 @@ public class MainActivity extends AppCompatActivity
             fm.beginTransaction().replace(R.id.content_frame, new ClienteFormFragment()).commit();
 
         } else if (id == R.id.nav_slideshow) {
-            //Intent i = new Intent(getApplicationContext(), ClienteActivity.class);
+            Intent i = new Intent(getApplicationContext(), TabFormActivity.class);
             //Fire that second activity
-           // startActivity(i);
+             startActivity(i);
 
         } else if (id == R.id.nav_manage) {
 
