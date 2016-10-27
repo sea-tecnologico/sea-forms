@@ -11,6 +11,10 @@
       "valuesProvider": ["Cédula Nacional", "Cédula de recidencia", "Cédula Jurídica","Pasaporte"]
     },
     {
+      "name": "Identificacion",
+      "editor": "text"
+    },
+    {
       "name": "Nombre",
       "editor": "text"
     },

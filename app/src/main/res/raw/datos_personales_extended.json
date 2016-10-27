@@ -1,15 +1,16 @@
 {
   "TipoIdentificacion": "Cédula Nacional",
+  "Identificacion": "",
   "Nombre": "",
   "PrimerApellido": "",
   "SegundoApellido": "",
   "CorreoElectronico": "",
   "Sexo": "Masculino",
-  "FechaNacimiento": ""  ,
-  "TelefonoCasa": "+359899999999",
-  "Celular": "+359899999999",
-  "Celular2": "+359899999999",
-  "Fax": "+359899999999"
+  "FechaNacimiento": null  ,
+  "TelefonoCasa": "+506",
+  "Celular": "+506",
+  "Celular2": "+506",
+  "Fax": "+506"
 }
 
 
