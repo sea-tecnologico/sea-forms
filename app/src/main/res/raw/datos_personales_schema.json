@@ -1,0 +1,62 @@
+{
+  "isReadOnly": false,
+  "commitMode": "immediate",
+  "validationMode": "immediate",
+  "properties":
+  [
+    {
+      "name": "TipoIdentificacion",
+      "displayName": "Tipo de identificación",
+      "editor": "segmentededitor",
+      "valuesProvider": ["Cédula Nacional", "Cédula de recidencia", "Cédula Jurídica","Pasaporte"]
+    },
+    {
+      "name": "Nombre",
+      "editor": "text"
+    },
+    {
+      "name": "PrimerApellido",
+      "displayName": "Primer apellido",
+      "editor": "text"
+    },
+    {
+    "name": "SegundoApellido",
+    "displayName": "Segundo apellido",
+    "editor": "text"
+    },
+    {
+    "name": "CorreoElectronico",
+    "editor": "email",
+    "validator": "MailValidator",
+    "displayName": "Correo Electrónico"
+    },
+    {
+    "name": "Sexo",
+    "editor": "picker",
+    "valuesProvider": ["Masculino", "Femenino"]
+    },
+    {
+    "name": "FechaNacimiento",
+    "displayName": "Fecha de nacimiento",
+    "editor": "datepicker"
+    },
+    {
+    "name": "TelefonoCasa",
+    "displayName": "Teléfono casa",
+    "editor": "phone"
+    },
+    {
+    "name": "Celular",
+    "editor": "phone"
+    },
+    {
+    "name": "Celular2",
+    "displayName": "Celular 2",
+    "editor": "phone"
+    },
+    {
+    "name": "Fax",
+    "editor": "phone"
+    }
+  ]
+}

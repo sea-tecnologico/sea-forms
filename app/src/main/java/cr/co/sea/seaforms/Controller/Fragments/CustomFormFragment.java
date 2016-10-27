@@ -1,24 +1,17 @@
 package cr.co.sea.seaforms.Controller.Fragments;
 
 import android.app.Fragment;
-import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 
 import com.telerik.widget.dataform.engine.DataFormMetadata;
-import com.telerik.widget.dataform.engine.PropertyConverter;
-import com.telerik.widget.dataform.visualization.DataFormGroupLayoutManager;
-import com.telerik.widget.dataform.visualization.DataFormLinearLayoutManager;
 import com.telerik.widget.dataform.visualization.RadDataForm;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -33,7 +26,6 @@ import java.io.Writer;
 import java.util.HashMap;
 import java.util.Iterator;
 
-import cr.co.sea.seaforms.Model.Cliente;
 import cr.co.sea.seaforms.R;
 
 /**
@@ -50,17 +42,21 @@ public class CustomFormFragment extends Fragment {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_custom_form,container,false);
         form = new RadDataForm(this.getActivity().getBaseContext());
 
-        String json = loadJSONFromAsset(R.raw.person);
+
+        String json = loadJSONFromAsset(R.raw.datos_personales_extended);
+
         try {
             JSONObject jsonObject = new JSONObject(json);
             form.setEntity(jsonObject);
-            String schema = loadJSONFromAsset(R.raw.person);
+
+            String schema = loadJSONFromAsset(R.raw.datos_personales_schema);
             JSONObject jsonSchema = new JSONObject(schema);
             DataFormMetadata metadata = new DataFormMetadata(jsonSchema);
             form.setMetadata(metadata);
         } catch (JSONException e) {
             Log.e("json", "error parsing json", e);
         }
+
         /*inta los campos del formulario desde el archivo json*/
         rootView.addView(form);
         guardar=(Button)rootView.findViewById (R.id.btn_customForm);
