@@ -14,15 +14,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ViewGroup;
-
-import com.telerik.widget.dataform.visualization.DataFormGroupLayoutManager;
-import com.telerik.widget.dataform.visualization.RadDataForm;
 
 import cr.co.sea.seaforms.Controller.Fragments.ClienteFormFragment;
-import cr.co.sea.seaforms.Controller.Fragments.CustomFormFragment;
+import cr.co.sea.seaforms.Controller.Fragments.DatosPersonalesFormFragment;
 import cr.co.sea.seaforms.Controller.Fragments.MainFragment;
-import cr.co.sea.seaforms.Model.Cliente;
 import cr.co.sea.seaforms.R;
 
 public class MainActivity extends AppCompatActivity
@@ -96,21 +91,14 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         FragmentManager fm = getFragmentManager();
         if (id == R.id.nav_camera) {
-            /*Inicio*/
-            fm.beginTransaction().replace(R.id.content_frame, new CustomFormFragment()).commit();
-            /*Login*/
-            /*Intent i = new Intent(getApplicationContext(), LoginActivity.class);
-            //Fire that second activity
-            startActivity(i);*/
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-            fm.beginTransaction().replace(R.id.content_frame, new ClienteFormFragment()).commit();
-
-        } else if (id == R.id.nav_slideshow) {
             Intent i = new Intent(getApplicationContext(), TabFormActivity.class);
             //Fire that second activity
-             startActivity(i);
+            startActivity(i);
+        } else if (id == R.id.nav_gallery) {
+
+
+        } else if (id == R.id.nav_slideshow) {
+
 
         } else if (id == R.id.nav_manage) {
 
