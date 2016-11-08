@@ -1,9 +1,5 @@
 package cr.co.sea.seaforms.Model;
 
-import com.telerik.widget.dataform.engine.MailValidator;
-import com.telerik.widget.dataform.visualization.annotations.DataFormProperty;
-import com.telerik.widget.dataform.visualization.editors.DataFormTimeEditor;
-
 import java.util.List;
 
 import cr.co.sea.seaforms.DAO.ClienteDao;
@@ -66,7 +62,7 @@ public class Cliente {
         this.id = id;
     }
 
-    public Cliente(Long id, String CliIdentificacion, String CliPasaporte, String CliNombre, String CliApellido1, String CliApellido2,String CliEmail, String CliSexo, java.util.Date CliFechaNacimiento, String CliTelCasa, String CliTelCel, String CliTelCel2, String CliFax, String CliDireccion, String CliOtrasSenas, String CliProvincia, String CliCanton, String CliDistrito, String CliTipoTarjeta, String CliNumeroTarjeta, String CliNumeroSeguridad, String CliVencimientoTarjeta) {
+    public Cliente(Long id, String CliIdentificacion, String CliPasaporte, String CliNombre, String CliApellido1, String CliApellido2, String CliEmail, String CliSexo, java.util.Date CliFechaNacimiento, String CliTelCasa, String CliTelCel, String CliTelCel2, String CliFax, String CliDireccion, String CliOtrasSenas, String CliProvincia, String CliCanton, String CliDistrito, String CliTipoTarjeta, String CliNumeroTarjeta, String CliNumeroSeguridad, String CliVencimientoTarjeta) {
         this.id = id;
         this.CliIdentificacion = CliIdentificacion;
         this.CliPasaporte = CliPasaporte;
@@ -97,8 +93,6 @@ public class Cliente {
         myDao = daoSession != null ? daoSession.getClienteDao() : null;
     }
 
-
-
     public Long getId() {
         return id;
     }
@@ -107,7 +101,6 @@ public class Cliente {
         this.id = id;
     }
 
-    @DataFormProperty(label = "Cedula", index = 0,group = "Datos personales")
     public String getCliIdentificacion() {
         return CliIdentificacion;
     }
@@ -115,7 +108,7 @@ public class Cliente {
     public void setCliIdentificacion(String CliIdentificacion) {
         this.CliIdentificacion = CliIdentificacion;
     }
-    @DataFormProperty(label = "Pasaporte", index = 1,group = "Datos personales")
+
     public String getCliPasaporte() {
         return CliPasaporte;
     }
@@ -125,7 +118,6 @@ public class Cliente {
     }
 
     /** Not-null value. */
-    @DataFormProperty(label = "Nombre", index = 2,required = true,group = "Datos personales")
     public String getCliNombre() {
         return CliNombre;
     }
@@ -136,7 +128,6 @@ public class Cliente {
     }
 
     /** Not-null value. */
-    @DataFormProperty(label = "Primer apellido", index = 3,required = true,group = "Datos personales")
     public String getCliApellido1() {
         return CliApellido1;
     }
@@ -145,7 +136,7 @@ public class Cliente {
     public void setCliApellido1(String CliApellido1) {
         this.CliApellido1 = CliApellido1;
     }
-    @DataFormProperty(label = "Segundo apellido", index = 4,group = "Datos personales")
+
     public String getCliApellido2() {
         return CliApellido2;
     }
@@ -153,16 +144,16 @@ public class Cliente {
     public void setCliApellido2(String CliApellido2) {
         this.CliApellido2 = CliApellido2;
     }
-    @DataFormProperty(label = "E-Mail", index = 5, validator = MailValidator.class,group = "Datos personales")
+
     public String getCliEmail() {
         return CliEmail;
     }
 
-    public void setCliEmail(String cliEmail) {
-        CliEmail = cliEmail;
+    public void setCliEmail(String CliEmail) {
+        this.CliEmail = CliEmail;
     }
+
     /** Not-null value. */
-    @DataFormProperty(label = "Sexo", index = 6,group = "Datos personales")
     public String getCliSexo() {
         return CliSexo;
     }
@@ -173,7 +164,6 @@ public class Cliente {
     }
 
     /** Not-null value. */
-    @DataFormProperty(label = "Fecha de nacimiento", index = 7 ,editor = DataFormTimeEditor.class,required = true,group = "Datos personales")
     public java.util.Date getCliFechaNacimiento() {
         return CliFechaNacimiento;
     }
@@ -182,7 +172,7 @@ public class Cliente {
     public void setCliFechaNacimiento(java.util.Date CliFechaNacimiento) {
         this.CliFechaNacimiento = CliFechaNacimiento;
     }
-    @DataFormProperty(label = "Telefono casa", index = 8,group = "Datos personales")
+
     public String getCliTelCasa() {
         return CliTelCasa;
     }
@@ -190,7 +180,7 @@ public class Cliente {
     public void setCliTelCasa(String CliTelCasa) {
         this.CliTelCasa = CliTelCasa;
     }
-    @DataFormProperty(label = "Celular", index = 9,group = "Datos personales")
+
     public String getCliTelCel() {
         return CliTelCel;
     }
@@ -198,7 +188,7 @@ public class Cliente {
     public void setCliTelCel(String CliTelCel) {
         this.CliTelCel = CliTelCel;
     }
-    @DataFormProperty(label = "Calular 2", index = 10,group = "Datos personales")
+
     public String getCliTelCel2() {
         return CliTelCel2;
     }
@@ -206,7 +196,7 @@ public class Cliente {
     public void setCliTelCel2(String CliTelCel2) {
         this.CliTelCel2 = CliTelCel2;
     }
-    @DataFormProperty(label = "Fax", index = 11,group = "Datos personales")
+
     public String getCliFax() {
         return CliFax;
     }
@@ -216,7 +206,6 @@ public class Cliente {
     }
 
     /** Not-null value. */
-    @DataFormProperty(label = "Direccion", index = 12,required = true,group = "Dirección física")
     public String getCliDireccion() {
         return CliDireccion;
     }
@@ -225,7 +214,7 @@ public class Cliente {
     public void setCliDireccion(String CliDireccion) {
         this.CliDireccion = CliDireccion;
     }
-    @DataFormProperty(label = "Otras Señas", index = 13,required = true,group = "Dirección física")
+
     public String getCliOtrasSenas() {
         return CliOtrasSenas;
     }
@@ -233,7 +222,7 @@ public class Cliente {
     public void setCliOtrasSenas(String CliOtrasSenas) {
         this.CliOtrasSenas = CliOtrasSenas;
     }
-    @DataFormProperty(label = "Provincia", index = 14,required = true,group = "Dirección física")
+
     public String getCliProvincia() {
         return CliProvincia;
     }
@@ -241,7 +230,7 @@ public class Cliente {
     public void setCliProvincia(String CliProvincia) {
         this.CliProvincia = CliProvincia;
     }
-    @DataFormProperty(label = "Canton", index = 15,required = true,group = "Dirección física")
+
     public String getCliCanton() {
         return CliCanton;
     }
@@ -249,7 +238,7 @@ public class Cliente {
     public void setCliCanton(String CliCanton) {
         this.CliCanton = CliCanton;
     }
-    @DataFormProperty(label = "Distrito", index = 16,required = true,group = "Dirección física")
+
     public String getCliDistrito() {
         return CliDistrito;
     }
@@ -257,7 +246,7 @@ public class Cliente {
     public void setCliDistrito(String CliDistrito) {
         this.CliDistrito = CliDistrito;
     }
-    @DataFormProperty(label = "Tipo Tarjeta", index = 17,group = "Método de pago")
+
     public String getCliTipoTarjeta() {
         return CliTipoTarjeta;
     }
@@ -265,7 +254,7 @@ public class Cliente {
     public void setCliTipoTarjeta(String CliTipoTarjeta) {
         this.CliTipoTarjeta = CliTipoTarjeta;
     }
-    @DataFormProperty(label = "Numero tarjeta", index = 18,group = "Método de pago")
+
     public String getCliNumeroTarjeta() {
         return CliNumeroTarjeta;
     }
@@ -273,7 +262,7 @@ public class Cliente {
     public void setCliNumeroTarjeta(String CliNumeroTarjeta) {
         this.CliNumeroTarjeta = CliNumeroTarjeta;
     }
-    @DataFormProperty(label = "Numero seguridad", index = 19,group = "Método de pago")
+
     public String getCliNumeroSeguridad() {
         return CliNumeroSeguridad;
     }
@@ -281,7 +270,7 @@ public class Cliente {
     public void setCliNumeroSeguridad(String CliNumeroSeguridad) {
         this.CliNumeroSeguridad = CliNumeroSeguridad;
     }
-    @DataFormProperty(label = "Vencimiento", index = 20,group = "Método de pago")
+
     public String getCliVencimientoTarjeta() {
         return CliVencimientoTarjeta;
     }
@@ -316,7 +305,7 @@ public class Cliente {
     public void delete() {
         if (myDao == null) {
             throw new DaoException("Entity is detached from DAO context");
-        }
+        }    
         myDao.delete(this);
     }
 
@@ -324,7 +313,7 @@ public class Cliente {
     public void update() {
         if (myDao == null) {
             throw new DaoException("Entity is detached from DAO context");
-        }
+        }    
         myDao.update(this);
     }
 
@@ -332,7 +321,7 @@ public class Cliente {
     public void refresh() {
         if (myDao == null) {
             throw new DaoException("Entity is detached from DAO context");
-        }
+        }    
         myDao.refresh(this);
     }
 

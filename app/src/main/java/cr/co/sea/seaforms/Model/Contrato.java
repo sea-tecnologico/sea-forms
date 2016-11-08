@@ -11,6 +11,10 @@ public class Contrato {
 
     private Long id;
     private java.util.Date ConFecha;
+    private byte[] ConFoto1;
+    private byte[] ConFoto2;
+    private byte[] ConFoto3;
+    private byte[] ConFoto4;
     private String ConGenerico1;
     private String ConGenerico2;
     private String ConGenerico3;
@@ -53,9 +57,13 @@ public class Contrato {
         this.id = id;
     }
 
-    public Contrato(Long id, java.util.Date ConFecha, String ConGenerico1, String ConGenerico2, String ConGenerico3, String ConGenerico4, String ConGenerico5, String ConGenerico6, String ConGenerico7, String ConGenerico8, String ConGenerico9, String ConGenerico10, String ConGenerico11, String ConGenerico12, String ConGenerico13, String ConGenerico14, String ConGenerico15, String ConGenerico16, String ConGenerico17, String ConGenerico18, String ConGenerico19, String ConGenerico20, String ConGenerico21, String ConGenerico22, String ConGenerico23, String ConGenerico24, String ConGenerico25, String ConGenerico26, String ConGenerico27, String ConGenerico28, String ConGenerico29, String ConGenerico30, long CliId) {
+    public Contrato(Long id, java.util.Date ConFecha, byte[] ConFoto1, byte[] ConFoto2, byte[] ConFoto3, byte[] ConFoto4, String ConGenerico1, String ConGenerico2, String ConGenerico3, String ConGenerico4, String ConGenerico5, String ConGenerico6, String ConGenerico7, String ConGenerico8, String ConGenerico9, String ConGenerico10, String ConGenerico11, String ConGenerico12, String ConGenerico13, String ConGenerico14, String ConGenerico15, String ConGenerico16, String ConGenerico17, String ConGenerico18, String ConGenerico19, String ConGenerico20, String ConGenerico21, String ConGenerico22, String ConGenerico23, String ConGenerico24, String ConGenerico25, String ConGenerico26, String ConGenerico27, String ConGenerico28, String ConGenerico29, String ConGenerico30, long CliId) {
         this.id = id;
         this.ConFecha = ConFecha;
+        this.ConFoto1 = ConFoto1;
+        this.ConFoto2 = ConFoto2;
+        this.ConFoto3 = ConFoto3;
+        this.ConFoto4 = ConFoto4;
         this.ConGenerico1 = ConGenerico1;
         this.ConGenerico2 = ConGenerico2;
         this.ConGenerico3 = ConGenerico3;
@@ -103,6 +111,38 @@ public class Contrato {
 
     public void setConFecha(java.util.Date ConFecha) {
         this.ConFecha = ConFecha;
+    }
+
+    public byte[] getConFoto1() {
+        return ConFoto1;
+    }
+
+    public void setConFoto1(byte[] ConFoto1) {
+        this.ConFoto1 = ConFoto1;
+    }
+
+    public byte[] getConFoto2() {
+        return ConFoto2;
+    }
+
+    public void setConFoto2(byte[] ConFoto2) {
+        this.ConFoto2 = ConFoto2;
+    }
+
+    public byte[] getConFoto3() {
+        return ConFoto3;
+    }
+
+    public void setConFoto3(byte[] ConFoto3) {
+        this.ConFoto3 = ConFoto3;
+    }
+
+    public byte[] getConFoto4() {
+        return ConFoto4;
+    }
+
+    public void setConFoto4(byte[] ConFoto4) {
+        this.ConFoto4 = ConFoto4;
     }
 
     public String getConGenerico1() {

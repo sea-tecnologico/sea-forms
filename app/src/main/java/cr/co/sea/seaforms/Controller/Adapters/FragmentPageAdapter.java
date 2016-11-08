@@ -6,6 +6,7 @@ import android.app.FragmentManager;
 import android.content.Context;
 import android.support.v13.app.FragmentPagerAdapter;
 
+import cr.co.sea.seaforms.Controller.Fragments.AnexosFormFragment;
 import cr.co.sea.seaforms.Controller.Fragments.ClienteFormFragment;
 import cr.co.sea.seaforms.Controller.Fragments.DatosPersonalesFormFragment;
 import cr.co.sea.seaforms.Controller.Fragments.MetodosPagoFormFragment;
@@ -20,9 +21,9 @@ import cr.co.sea.seaforms.Controller.Fragments.MetodosPagoFormFragment;
  * o responsible for making a View for each item in the data set.
 * */
 public class FragmentPageAdapter extends FragmentPagerAdapter {
-    private String[] tabTitle = new String[]{"Datos Personales","Métodos de pago","Datos Genericos"};
+    private String[] tabTitle = new String[]{"Datos Personales","Métodos de pago","Anexos","Datos Genericos"};
     Context context;
-    private  int pageCount = 3;
+    private  int pageCount = 4;
     public FragmentPageAdapter(FragmentManager fm, Context context) {
         super(fm);
         this.context = context;
@@ -40,6 +41,9 @@ public class FragmentPageAdapter extends FragmentPagerAdapter {
                 MetodosPagoFormFragment metodosPagoFormFragment= new MetodosPagoFormFragment();
                 return metodosPagoFormFragment;
             case 2:
+                AnexosFormFragment anexosFormFragment= new AnexosFormFragment();
+                return anexosFormFragment;
+            case 3:
                 ClienteFormFragment clienteFormFragmentDefault= new ClienteFormFragment();
                 return clienteFormFragmentDefault;
             default:

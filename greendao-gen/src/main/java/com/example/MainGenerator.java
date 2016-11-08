@@ -62,6 +62,10 @@ public class MainGenerator {
         Entity contrato = schema.addEntity("Contrato");
         contrato.addIdProperty().primaryKey().autoincrement();
         contrato.addDateProperty("ConFecha");
+        contrato.addByteArrayProperty("ConFoto1");
+        contrato.addByteArrayProperty("ConFoto2");
+        contrato.addByteArrayProperty("ConFoto3");
+        contrato.addByteArrayProperty("ConFoto4");
         contrato.addStringProperty("ConGenerico1");
         contrato.addStringProperty("ConGenerico2");
         contrato.addStringProperty("ConGenerico3");

@@ -3,34 +3,20 @@ package cr.co.sea.seaforms.Controller.Fragments;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.telerik.widget.dataform.engine.DataFormMetadata;
 import com.telerik.widget.dataform.visualization.DataFormGroupLayoutManager;
 import com.telerik.widget.dataform.visualization.RadDataForm;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.StringWriter;
-import java.io.Writer;
-
-import cr.co.sea.seaforms.Model.Cliente;
 import cr.co.sea.seaforms.R;
 
 /**
  * Created by asanchezo on 14/10/2016.
  */
 
-public class ClienteFormFragment extends Fragment {
+public class  ClienteFormFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
