@@ -49,7 +49,7 @@ public class Contrato {
 
     // KEEP FIELDS - put your custom fields here
     // KEEP FIELDS END
-
+    static Contrato contratoSingleton;
     public Contrato() {
     }
 
@@ -396,4 +396,7 @@ public class Contrato {
     // KEEP METHODS - put your custom methods here
     // KEEP METHODS END
 
+    public static Contrato getContratoSingleton() {
+        return contratoSingleton;
+    }
 }

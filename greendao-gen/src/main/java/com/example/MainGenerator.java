@@ -25,7 +25,7 @@ public class MainGenerator {
     private static void addTables(final Schema schema) {
         Entity cli = addCliente(schema);
         Entity contrato = addContrato(schema);
-
+        Entity formulario = addFormulario(schema);
         Property userId = contrato.addLongProperty("CliId").notNull().getProperty();
         cli.addToMany(contrato, userId, "cliContratos");
     }
@@ -100,5 +100,13 @@ public class MainGenerator {
         //contrato.addIntProperty("watchers_count");
 
         return contrato;
+    }
+    private static Entity addFormulario(final Schema schema) {
+        Entity formulario = schema.addEntity("Formulario");
+        formulario.addIdProperty().primaryKey().autoincrement();
+        formulario.addStringProperty("Form_nombre");
+        formulario.addStringProperty("Form_valor");
+
+        return formulario;
     }
 }

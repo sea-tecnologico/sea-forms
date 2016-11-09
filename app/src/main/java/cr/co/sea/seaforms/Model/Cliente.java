@@ -54,7 +54,7 @@ public class Cliente {
 
     // KEEP FIELDS - put your custom fields here
     // KEEP FIELDS END
-
+    static Cliente clienteSingleton;
     public Cliente() {
     }
 
@@ -328,4 +328,7 @@ public class Cliente {
     // KEEP METHODS - put your custom methods here
     // KEEP METHODS END
 
+    public static Cliente getClienteSingleton() {
+        return clienteSingleton;
+    }
 }

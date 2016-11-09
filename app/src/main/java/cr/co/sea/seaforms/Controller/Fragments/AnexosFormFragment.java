@@ -33,6 +33,9 @@ import java.util.TreeSet;
 
 import cr.co.sea.seaforms.R;
 
+import static android.app.Activity.RESULT_CANCELED;
+import static android.app.Activity.RESULT_OK;
+
 /**
  * Created by asanchezo on 18/10/2016.
  */
@@ -90,36 +93,39 @@ public class AnexosFormFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Bitmap bp = (Bitmap) data.getExtras().get("data");
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        byte[] byteArray;
-        switch (numFoto){
-            case 1:
-                foto1.setBackgroundResource(0);
-                foto1.setImageBitmap(bp);
-                bp.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                byteArray = stream.toByteArray(); // Este es el objeto que debo guardar en la base de datos local
-                break;
-            case 2:
-                foto2.setBackgroundResource(0);
-                foto2.setImageBitmap(bp);
-                bp.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                byteArray = stream.toByteArray(); // Este es el objeto que debo guardar en la base de datos local
-                break;
-            case 3:
-                foto3.setBackgroundResource(0);
-                foto3.setImageBitmap(bp);
-                bp.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                byteArray = stream.toByteArray(); // Este es el objeto que debo guardar en la base de datos local
-                break;
-            case 4:
-                foto4.setBackgroundResource(0);
-                foto4.setImageBitmap(bp);
-                bp.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                byteArray = stream.toByteArray(); // Este es el objeto que debo guardar en la base de datos local
-                break;
-            default:
-                break;
+
+        if(resultCode == RESULT_OK) {
+            Bitmap bp = (Bitmap) data.getExtras().get("data");
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            byte[] byteArray;
+            switch (numFoto) {
+                case 1:
+                    foto1.setBackgroundResource(0);
+                    foto1.setImageBitmap(bp);
+                    bp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                    byteArray = stream.toByteArray(); // Este es el objeto que debo guardar en la base de datos local
+                    break;
+                case 2:
+                    foto2.setBackgroundResource(0);
+                    foto2.setImageBitmap(bp);
+                    bp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                    byteArray = stream.toByteArray(); // Este es el objeto que debo guardar en la base de datos local
+                    break;
+                case 3:
+                    foto3.setBackgroundResource(0);
+                    foto3.setImageBitmap(bp);
+                    bp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                    byteArray = stream.toByteArray(); // Este es el objeto que debo guardar en la base de datos local
+                    break;
+                case 4:
+                    foto4.setBackgroundResource(0);
+                    foto4.setImageBitmap(bp);
+                    bp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                    byteArray = stream.toByteArray(); // Este es el objeto que debo guardar en la base de datos local
+                    break;
+                default:
+                    break;
+            }
         }
 
 
