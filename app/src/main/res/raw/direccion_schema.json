@@ -1,0 +1,35 @@
+{
+  "isReadOnly": false,
+  "commitMode": "immediate",
+  "validationMode": "immediate",
+  "properties":
+  [
+    {
+      "name": "Provincia",
+      "displayName": "Provincia",
+      "editor": "picker",
+      "valuesProvider": ["Alajuela", "Cartago","Guanacaste", "Heredia","Limón","Puntarenas","San José"]
+    },
+
+    {
+      "name": "Canton",
+      "displayName": "Cantón",
+      "editor": "text"
+    },
+    {
+      "name": "Distrito",
+      "displayName": "Distrito",
+      "editor": "number"
+    },
+    {
+      "name": "Direccion",
+      "displayName": "Dirección",
+      "editor": "text"
+    },
+    {
+      "name": "OtrasSenas",
+      "displayName": "Otras Señas",
+      "editor": "text"
+    }
+  ]
+}

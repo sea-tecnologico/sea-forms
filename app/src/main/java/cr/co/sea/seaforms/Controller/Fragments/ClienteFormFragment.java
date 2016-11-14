@@ -25,10 +25,10 @@ public class  ClienteFormFragment extends Fragment {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_cliente_form,container,false);
         /*Esta sección despliega el formulario con telerik formado desde la clase*/
         /****************/
-        RadDataForm form = new RadDataForm(this.getActivity().getBaseContext());
-        form.setEntity(new Cliente());
+        //RadDataForm form = new RadDataForm(this.getActivity().getBaseContext());
+        /*form.setEntity(new Cliente());
         form.setLayoutManager(new DataFormGroupLayoutManager(this.getActivity().getBaseContext()));
-        rootView.addView(form);
+        rootView.addView(form);*/
         return  rootView;
     }
 

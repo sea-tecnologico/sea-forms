@@ -4,6 +4,9 @@ package cr.co.sea.seaforms.Model;
 
 // KEEP INCLUDES - put your custom includes here
 // KEEP INCLUDES END
+
+import java.util.Arrays;
+
 /**
  * Entity mapped to table "CONTRATO".
  */
@@ -11,6 +14,7 @@ public class Contrato {
 
     private Long id;
     private java.util.Date ConFecha;
+    private Float ConMontoTotal;
     private byte[] ConFoto1;
     private byte[] ConFoto2;
     private byte[] ConFoto3;
@@ -50,6 +54,7 @@ public class Contrato {
     // KEEP FIELDS - put your custom fields here
     // KEEP FIELDS END
     static Contrato contratoSingleton;
+
     public Contrato() {
     }
 
@@ -57,9 +62,10 @@ public class Contrato {
         this.id = id;
     }
 
-    public Contrato(Long id, java.util.Date ConFecha, byte[] ConFoto1, byte[] ConFoto2, byte[] ConFoto3, byte[] ConFoto4, String ConGenerico1, String ConGenerico2, String ConGenerico3, String ConGenerico4, String ConGenerico5, String ConGenerico6, String ConGenerico7, String ConGenerico8, String ConGenerico9, String ConGenerico10, String ConGenerico11, String ConGenerico12, String ConGenerico13, String ConGenerico14, String ConGenerico15, String ConGenerico16, String ConGenerico17, String ConGenerico18, String ConGenerico19, String ConGenerico20, String ConGenerico21, String ConGenerico22, String ConGenerico23, String ConGenerico24, String ConGenerico25, String ConGenerico26, String ConGenerico27, String ConGenerico28, String ConGenerico29, String ConGenerico30, long CliId) {
+    public Contrato(Long id, java.util.Date ConFecha, Float ConMontoTotal, byte[] ConFoto1, byte[] ConFoto2, byte[] ConFoto3, byte[] ConFoto4, String ConGenerico1, String ConGenerico2, String ConGenerico3, String ConGenerico4, String ConGenerico5, String ConGenerico6, String ConGenerico7, String ConGenerico8, String ConGenerico9, String ConGenerico10, String ConGenerico11, String ConGenerico12, String ConGenerico13, String ConGenerico14, String ConGenerico15, String ConGenerico16, String ConGenerico17, String ConGenerico18, String ConGenerico19, String ConGenerico20, String ConGenerico21, String ConGenerico22, String ConGenerico23, String ConGenerico24, String ConGenerico25, String ConGenerico26, String ConGenerico27, String ConGenerico28, String ConGenerico29, String ConGenerico30, long CliId) {
         this.id = id;
         this.ConFecha = ConFecha;
+        this.ConMontoTotal = ConMontoTotal;
         this.ConFoto1 = ConFoto1;
         this.ConFoto2 = ConFoto2;
         this.ConFoto3 = ConFoto3;
@@ -111,6 +117,14 @@ public class Contrato {
 
     public void setConFecha(java.util.Date ConFecha) {
         this.ConFecha = ConFecha;
+    }
+
+    public Float getConMontoTotal() {
+        return ConMontoTotal;
+    }
+
+    public void setConMontoTotal(Float ConMontoTotal) {
+        this.ConMontoTotal = ConMontoTotal;
     }
 
     public byte[] getConFoto1() {
@@ -396,7 +410,19 @@ public class Contrato {
     // KEEP METHODS - put your custom methods here
     // KEEP METHODS END
 
+
     public static Contrato getContratoSingleton() {
+        if(contratoSingleton == null){
+            contratoSingleton = new Contrato();
+        }
         return contratoSingleton;
+    }
+
+    @Override
+    public String toString() {
+        return "Contrato{" +
+                "id=" + id +
+                ", ConFecha=" + ConFecha +
+                '}';
     }
 }

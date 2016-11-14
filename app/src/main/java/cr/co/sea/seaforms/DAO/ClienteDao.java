@@ -24,27 +24,28 @@ public class ClienteDao extends AbstractDao<Cliente, Long> {
     */
     public static class Properties {
         public final static Property Id = new Property(0, Long.class, "id", true, "_id");
-        public final static Property CliIdentificacion = new Property(1, String.class, "CliIdentificacion", false, "CLI_IDENTIFICACION");
-        public final static Property CliPasaporte = new Property(2, String.class, "CliPasaporte", false, "CLI_PASAPORTE");
-        public final static Property CliNombre = new Property(3, String.class, "CliNombre", false, "CLI_NOMBRE");
-        public final static Property CliApellido1 = new Property(4, String.class, "CliApellido1", false, "CLI_APELLIDO1");
-        public final static Property CliApellido2 = new Property(5, String.class, "CliApellido2", false, "CLI_APELLIDO2");
-        public final static Property CliEmail = new Property(6, String.class, "CliEmail", false, "CLI_EMAIL");
-        public final static Property CliSexo = new Property(7, String.class, "CliSexo", false, "CLI_SEXO");
-        public final static Property CliFechaNacimiento = new Property(8, java.util.Date.class, "CliFechaNacimiento", false, "CLI_FECHA_NACIMIENTO");
-        public final static Property CliTelCasa = new Property(9, String.class, "CliTelCasa", false, "CLI_TEL_CASA");
-        public final static Property CliTelCel = new Property(10, String.class, "CliTelCel", false, "CLI_TEL_CEL");
-        public final static Property CliTelCel2 = new Property(11, String.class, "CliTelCel2", false, "CLI_TEL_CEL2");
-        public final static Property CliFax = new Property(12, String.class, "CliFax", false, "CLI_FAX");
-        public final static Property CliDireccion = new Property(13, String.class, "CliDireccion", false, "CLI_DIRECCION");
-        public final static Property CliOtrasSenas = new Property(14, String.class, "CliOtrasSenas", false, "CLI_OTRAS_SENAS");
-        public final static Property CliProvincia = new Property(15, String.class, "CliProvincia", false, "CLI_PROVINCIA");
-        public final static Property CliCanton = new Property(16, String.class, "CliCanton", false, "CLI_CANTON");
-        public final static Property CliDistrito = new Property(17, String.class, "CliDistrito", false, "CLI_DISTRITO");
-        public final static Property CliTipoTarjeta = new Property(18, String.class, "CliTipoTarjeta", false, "CLI_TIPO_TARJETA");
-        public final static Property CliNumeroTarjeta = new Property(19, String.class, "CliNumeroTarjeta", false, "CLI_NUMERO_TARJETA");
-        public final static Property CliNumeroSeguridad = new Property(20, String.class, "CliNumeroSeguridad", false, "CLI_NUMERO_SEGURIDAD");
-        public final static Property CliVencimientoTarjeta = new Property(21, String.class, "CliVencimientoTarjeta", false, "CLI_VENCIMIENTO_TARJETA");
+        public final static Property CliTipoIdentificacion = new Property(1, String.class, "CliTipoIdentificacion", false, "CLI_TIPO_IDENTIFICACION");
+        public final static Property CliIdentificacion = new Property(2, String.class, "CliIdentificacion", false, "CLI_IDENTIFICACION");
+        public final static Property CliPasaporte = new Property(3, String.class, "CliPasaporte", false, "CLI_PASAPORTE");
+        public final static Property CliNombre = new Property(4, String.class, "CliNombre", false, "CLI_NOMBRE");
+        public final static Property CliApellido1 = new Property(5, String.class, "CliApellido1", false, "CLI_APELLIDO1");
+        public final static Property CliApellido2 = new Property(6, String.class, "CliApellido2", false, "CLI_APELLIDO2");
+        public final static Property CliEmail = new Property(7, String.class, "CliEmail", false, "CLI_EMAIL");
+        public final static Property CliSexo = new Property(8, String.class, "CliSexo", false, "CLI_SEXO");
+        public final static Property CliFechaNacimiento = new Property(9, java.util.Date.class, "CliFechaNacimiento", false, "CLI_FECHA_NACIMIENTO");
+        public final static Property CliTelCasa = new Property(10, String.class, "CliTelCasa", false, "CLI_TEL_CASA");
+        public final static Property CliTelCel = new Property(11, String.class, "CliTelCel", false, "CLI_TEL_CEL");
+        public final static Property CliTelCel2 = new Property(12, String.class, "CliTelCel2", false, "CLI_TEL_CEL2");
+        public final static Property CliFax = new Property(13, String.class, "CliFax", false, "CLI_FAX");
+        public final static Property CliDireccion = new Property(14, String.class, "CliDireccion", false, "CLI_DIRECCION");
+        public final static Property CliOtrasSenas = new Property(15, String.class, "CliOtrasSenas", false, "CLI_OTRAS_SENAS");
+        public final static Property CliProvincia = new Property(16, String.class, "CliProvincia", false, "CLI_PROVINCIA");
+        public final static Property CliCanton = new Property(17, String.class, "CliCanton", false, "CLI_CANTON");
+        public final static Property CliDistrito = new Property(18, String.class, "CliDistrito", false, "CLI_DISTRITO");
+        public final static Property CliTipoTarjeta = new Property(19, String.class, "CliTipoTarjeta", false, "CLI_TIPO_TARJETA");
+        public final static Property CliNumeroTarjeta = new Property(20, String.class, "CliNumeroTarjeta", false, "CLI_NUMERO_TARJETA");
+        public final static Property CliNumeroSeguridad = new Property(21, String.class, "CliNumeroSeguridad", false, "CLI_NUMERO_SEGURIDAD");
+        public final static Property CliVencimientoTarjeta = new Property(22, String.class, "CliVencimientoTarjeta", false, "CLI_VENCIMIENTO_TARJETA");
     };
 
     private DaoSession daoSession;
@@ -64,27 +65,28 @@ public class ClienteDao extends AbstractDao<Cliente, Long> {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"CLIENTE\" (" + //
                 "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: id
-                "\"CLI_IDENTIFICACION\" TEXT," + // 1: CliIdentificacion
-                "\"CLI_PASAPORTE\" TEXT," + // 2: CliPasaporte
-                "\"CLI_NOMBRE\" TEXT NOT NULL ," + // 3: CliNombre
-                "\"CLI_APELLIDO1\" TEXT NOT NULL ," + // 4: CliApellido1
-                "\"CLI_APELLIDO2\" TEXT," + // 5: CliApellido2
-                "\"CLI_EMAIL\" TEXT," + // 6: CliEmail
-                "\"CLI_SEXO\" TEXT NOT NULL ," + // 7: CliSexo
-                "\"CLI_FECHA_NACIMIENTO\" INTEGER NOT NULL ," + // 8: CliFechaNacimiento
-                "\"CLI_TEL_CASA\" TEXT," + // 9: CliTelCasa
-                "\"CLI_TEL_CEL\" TEXT," + // 10: CliTelCel
-                "\"CLI_TEL_CEL2\" TEXT," + // 11: CliTelCel2
-                "\"CLI_FAX\" TEXT," + // 12: CliFax
-                "\"CLI_DIRECCION\" TEXT NOT NULL ," + // 13: CliDireccion
-                "\"CLI_OTRAS_SENAS\" TEXT," + // 14: CliOtrasSenas
-                "\"CLI_PROVINCIA\" TEXT," + // 15: CliProvincia
-                "\"CLI_CANTON\" TEXT," + // 16: CliCanton
-                "\"CLI_DISTRITO\" TEXT," + // 17: CliDistrito
-                "\"CLI_TIPO_TARJETA\" TEXT," + // 18: CliTipoTarjeta
-                "\"CLI_NUMERO_TARJETA\" TEXT," + // 19: CliNumeroTarjeta
-                "\"CLI_NUMERO_SEGURIDAD\" TEXT," + // 20: CliNumeroSeguridad
-                "\"CLI_VENCIMIENTO_TARJETA\" TEXT);"); // 21: CliVencimientoTarjeta
+                "\"CLI_TIPO_IDENTIFICACION\" TEXT," + // 1: CliTipoIdentificacion
+                "\"CLI_IDENTIFICACION\" TEXT," + // 2: CliIdentificacion
+                "\"CLI_PASAPORTE\" TEXT," + // 3: CliPasaporte
+                "\"CLI_NOMBRE\" TEXT NOT NULL ," + // 4: CliNombre
+                "\"CLI_APELLIDO1\" TEXT NOT NULL ," + // 5: CliApellido1
+                "\"CLI_APELLIDO2\" TEXT," + // 6: CliApellido2
+                "\"CLI_EMAIL\" TEXT," + // 7: CliEmail
+                "\"CLI_SEXO\" TEXT NOT NULL ," + // 8: CliSexo
+                "\"CLI_FECHA_NACIMIENTO\" INTEGER NOT NULL ," + // 9: CliFechaNacimiento
+                "\"CLI_TEL_CASA\" TEXT," + // 10: CliTelCasa
+                "\"CLI_TEL_CEL\" TEXT," + // 11: CliTelCel
+                "\"CLI_TEL_CEL2\" TEXT," + // 12: CliTelCel2
+                "\"CLI_FAX\" TEXT," + // 13: CliFax
+                "\"CLI_DIRECCION\" TEXT NOT NULL ," + // 14: CliDireccion
+                "\"CLI_OTRAS_SENAS\" TEXT," + // 15: CliOtrasSenas
+                "\"CLI_PROVINCIA\" TEXT," + // 16: CliProvincia
+                "\"CLI_CANTON\" TEXT," + // 17: CliCanton
+                "\"CLI_DISTRITO\" TEXT," + // 18: CliDistrito
+                "\"CLI_TIPO_TARJETA\" TEXT," + // 19: CliTipoTarjeta
+                "\"CLI_NUMERO_TARJETA\" TEXT," + // 20: CliNumeroTarjeta
+                "\"CLI_NUMERO_SEGURIDAD\" TEXT," + // 21: CliNumeroSeguridad
+                "\"CLI_VENCIMIENTO_TARJETA\" TEXT);"); // 22: CliVencimientoTarjeta
     }
 
     /** Drops the underlying database table. */
@@ -103,89 +105,94 @@ public class ClienteDao extends AbstractDao<Cliente, Long> {
             stmt.bindLong(1, id);
         }
  
+        String CliTipoIdentificacion = entity.getCliTipoIdentificacion();
+        if (CliTipoIdentificacion != null) {
+            stmt.bindString(2, CliTipoIdentificacion);
+        }
+ 
         String CliIdentificacion = entity.getCliIdentificacion();
         if (CliIdentificacion != null) {
-            stmt.bindString(2, CliIdentificacion);
+            stmt.bindString(3, CliIdentificacion);
         }
  
         String CliPasaporte = entity.getCliPasaporte();
         if (CliPasaporte != null) {
-            stmt.bindString(3, CliPasaporte);
+            stmt.bindString(4, CliPasaporte);
         }
-        stmt.bindString(4, entity.getCliNombre());
-        stmt.bindString(5, entity.getCliApellido1());
+        stmt.bindString(5, entity.getCliNombre());
+        stmt.bindString(6, entity.getCliApellido1());
  
         String CliApellido2 = entity.getCliApellido2();
         if (CliApellido2 != null) {
-            stmt.bindString(6, CliApellido2);
+            stmt.bindString(7, CliApellido2);
         }
  
         String CliEmail = entity.getCliEmail();
         if (CliEmail != null) {
-            stmt.bindString(7, CliEmail);
+            stmt.bindString(8, CliEmail);
         }
-        stmt.bindString(8, entity.getCliSexo());
-        stmt.bindLong(9, entity.getCliFechaNacimiento().getTime());
+        stmt.bindString(9, entity.getCliSexo());
+        stmt.bindLong(10, entity.getCliFechaNacimiento().getTime());
  
         String CliTelCasa = entity.getCliTelCasa();
         if (CliTelCasa != null) {
-            stmt.bindString(10, CliTelCasa);
+            stmt.bindString(11, CliTelCasa);
         }
  
         String CliTelCel = entity.getCliTelCel();
         if (CliTelCel != null) {
-            stmt.bindString(11, CliTelCel);
+            stmt.bindString(12, CliTelCel);
         }
  
         String CliTelCel2 = entity.getCliTelCel2();
         if (CliTelCel2 != null) {
-            stmt.bindString(12, CliTelCel2);
+            stmt.bindString(13, CliTelCel2);
         }
  
         String CliFax = entity.getCliFax();
         if (CliFax != null) {
-            stmt.bindString(13, CliFax);
+            stmt.bindString(14, CliFax);
         }
-        stmt.bindString(14, entity.getCliDireccion());
+        stmt.bindString(15, entity.getCliDireccion());
  
         String CliOtrasSenas = entity.getCliOtrasSenas();
         if (CliOtrasSenas != null) {
-            stmt.bindString(15, CliOtrasSenas);
+            stmt.bindString(16, CliOtrasSenas);
         }
  
         String CliProvincia = entity.getCliProvincia();
         if (CliProvincia != null) {
-            stmt.bindString(16, CliProvincia);
+            stmt.bindString(17, CliProvincia);
         }
  
         String CliCanton = entity.getCliCanton();
         if (CliCanton != null) {
-            stmt.bindString(17, CliCanton);
+            stmt.bindString(18, CliCanton);
         }
  
         String CliDistrito = entity.getCliDistrito();
         if (CliDistrito != null) {
-            stmt.bindString(18, CliDistrito);
+            stmt.bindString(19, CliDistrito);
         }
  
         String CliTipoTarjeta = entity.getCliTipoTarjeta();
         if (CliTipoTarjeta != null) {
-            stmt.bindString(19, CliTipoTarjeta);
+            stmt.bindString(20, CliTipoTarjeta);
         }
  
         String CliNumeroTarjeta = entity.getCliNumeroTarjeta();
         if (CliNumeroTarjeta != null) {
-            stmt.bindString(20, CliNumeroTarjeta);
+            stmt.bindString(21, CliNumeroTarjeta);
         }
  
         String CliNumeroSeguridad = entity.getCliNumeroSeguridad();
         if (CliNumeroSeguridad != null) {
-            stmt.bindString(21, CliNumeroSeguridad);
+            stmt.bindString(22, CliNumeroSeguridad);
         }
  
         String CliVencimientoTarjeta = entity.getCliVencimientoTarjeta();
         if (CliVencimientoTarjeta != null) {
-            stmt.bindString(22, CliVencimientoTarjeta);
+            stmt.bindString(23, CliVencimientoTarjeta);
         }
     }
 
@@ -206,27 +213,28 @@ public class ClienteDao extends AbstractDao<Cliente, Long> {
     public Cliente readEntity(Cursor cursor, int offset) {
         Cliente entity = new Cliente( //
             cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // id
-            cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // CliIdentificacion
-            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // CliPasaporte
-            cursor.getString(offset + 3), // CliNombre
-            cursor.getString(offset + 4), // CliApellido1
-            cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5), // CliApellido2
-            cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6), // CliEmail
-            cursor.getString(offset + 7), // CliSexo
-            new java.util.Date(cursor.getLong(offset + 8)), // CliFechaNacimiento
-            cursor.isNull(offset + 9) ? null : cursor.getString(offset + 9), // CliTelCasa
-            cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10), // CliTelCel
-            cursor.isNull(offset + 11) ? null : cursor.getString(offset + 11), // CliTelCel2
-            cursor.isNull(offset + 12) ? null : cursor.getString(offset + 12), // CliFax
-            cursor.getString(offset + 13), // CliDireccion
-            cursor.isNull(offset + 14) ? null : cursor.getString(offset + 14), // CliOtrasSenas
-            cursor.isNull(offset + 15) ? null : cursor.getString(offset + 15), // CliProvincia
-            cursor.isNull(offset + 16) ? null : cursor.getString(offset + 16), // CliCanton
-            cursor.isNull(offset + 17) ? null : cursor.getString(offset + 17), // CliDistrito
-            cursor.isNull(offset + 18) ? null : cursor.getString(offset + 18), // CliTipoTarjeta
-            cursor.isNull(offset + 19) ? null : cursor.getString(offset + 19), // CliNumeroTarjeta
-            cursor.isNull(offset + 20) ? null : cursor.getString(offset + 20), // CliNumeroSeguridad
-            cursor.isNull(offset + 21) ? null : cursor.getString(offset + 21) // CliVencimientoTarjeta
+            cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // CliTipoIdentificacion
+            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // CliIdentificacion
+            cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // CliPasaporte
+            cursor.getString(offset + 4), // CliNombre
+            cursor.getString(offset + 5), // CliApellido1
+            cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6), // CliApellido2
+            cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7), // CliEmail
+            cursor.getString(offset + 8), // CliSexo
+            new java.util.Date(cursor.getLong(offset + 9)), // CliFechaNacimiento
+            cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10), // CliTelCasa
+            cursor.isNull(offset + 11) ? null : cursor.getString(offset + 11), // CliTelCel
+            cursor.isNull(offset + 12) ? null : cursor.getString(offset + 12), // CliTelCel2
+            cursor.isNull(offset + 13) ? null : cursor.getString(offset + 13), // CliFax
+            cursor.getString(offset + 14), // CliDireccion
+            cursor.isNull(offset + 15) ? null : cursor.getString(offset + 15), // CliOtrasSenas
+            cursor.isNull(offset + 16) ? null : cursor.getString(offset + 16), // CliProvincia
+            cursor.isNull(offset + 17) ? null : cursor.getString(offset + 17), // CliCanton
+            cursor.isNull(offset + 18) ? null : cursor.getString(offset + 18), // CliDistrito
+            cursor.isNull(offset + 19) ? null : cursor.getString(offset + 19), // CliTipoTarjeta
+            cursor.isNull(offset + 20) ? null : cursor.getString(offset + 20), // CliNumeroTarjeta
+            cursor.isNull(offset + 21) ? null : cursor.getString(offset + 21), // CliNumeroSeguridad
+            cursor.isNull(offset + 22) ? null : cursor.getString(offset + 22) // CliVencimientoTarjeta
         );
         return entity;
     }
@@ -235,27 +243,28 @@ public class ClienteDao extends AbstractDao<Cliente, Long> {
     @Override
     public void readEntity(Cursor cursor, Cliente entity, int offset) {
         entity.setId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
-        entity.setCliIdentificacion(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
-        entity.setCliPasaporte(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
-        entity.setCliNombre(cursor.getString(offset + 3));
-        entity.setCliApellido1(cursor.getString(offset + 4));
-        entity.setCliApellido2(cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5));
-        entity.setCliEmail(cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6));
-        entity.setCliSexo(cursor.getString(offset + 7));
-        entity.setCliFechaNacimiento(new java.util.Date(cursor.getLong(offset + 8)));
-        entity.setCliTelCasa(cursor.isNull(offset + 9) ? null : cursor.getString(offset + 9));
-        entity.setCliTelCel(cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10));
-        entity.setCliTelCel2(cursor.isNull(offset + 11) ? null : cursor.getString(offset + 11));
-        entity.setCliFax(cursor.isNull(offset + 12) ? null : cursor.getString(offset + 12));
-        entity.setCliDireccion(cursor.getString(offset + 13));
-        entity.setCliOtrasSenas(cursor.isNull(offset + 14) ? null : cursor.getString(offset + 14));
-        entity.setCliProvincia(cursor.isNull(offset + 15) ? null : cursor.getString(offset + 15));
-        entity.setCliCanton(cursor.isNull(offset + 16) ? null : cursor.getString(offset + 16));
-        entity.setCliDistrito(cursor.isNull(offset + 17) ? null : cursor.getString(offset + 17));
-        entity.setCliTipoTarjeta(cursor.isNull(offset + 18) ? null : cursor.getString(offset + 18));
-        entity.setCliNumeroTarjeta(cursor.isNull(offset + 19) ? null : cursor.getString(offset + 19));
-        entity.setCliNumeroSeguridad(cursor.isNull(offset + 20) ? null : cursor.getString(offset + 20));
-        entity.setCliVencimientoTarjeta(cursor.isNull(offset + 21) ? null : cursor.getString(offset + 21));
+        entity.setCliTipoIdentificacion(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
+        entity.setCliIdentificacion(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
+        entity.setCliPasaporte(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
+        entity.setCliNombre(cursor.getString(offset + 4));
+        entity.setCliApellido1(cursor.getString(offset + 5));
+        entity.setCliApellido2(cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6));
+        entity.setCliEmail(cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7));
+        entity.setCliSexo(cursor.getString(offset + 8));
+        entity.setCliFechaNacimiento(new java.util.Date(cursor.getLong(offset + 9)));
+        entity.setCliTelCasa(cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10));
+        entity.setCliTelCel(cursor.isNull(offset + 11) ? null : cursor.getString(offset + 11));
+        entity.setCliTelCel2(cursor.isNull(offset + 12) ? null : cursor.getString(offset + 12));
+        entity.setCliFax(cursor.isNull(offset + 13) ? null : cursor.getString(offset + 13));
+        entity.setCliDireccion(cursor.getString(offset + 14));
+        entity.setCliOtrasSenas(cursor.isNull(offset + 15) ? null : cursor.getString(offset + 15));
+        entity.setCliProvincia(cursor.isNull(offset + 16) ? null : cursor.getString(offset + 16));
+        entity.setCliCanton(cursor.isNull(offset + 17) ? null : cursor.getString(offset + 17));
+        entity.setCliDistrito(cursor.isNull(offset + 18) ? null : cursor.getString(offset + 18));
+        entity.setCliTipoTarjeta(cursor.isNull(offset + 19) ? null : cursor.getString(offset + 19));
+        entity.setCliNumeroTarjeta(cursor.isNull(offset + 20) ? null : cursor.getString(offset + 20));
+        entity.setCliNumeroSeguridad(cursor.isNull(offset + 21) ? null : cursor.getString(offset + 21));
+        entity.setCliVencimientoTarjeta(cursor.isNull(offset + 22) ? null : cursor.getString(offset + 22));
      }
     
     /** @inheritdoc */

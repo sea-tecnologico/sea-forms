@@ -2,6 +2,7 @@ package cr.co.sea.seaforms.Controller.Activities;
 
 import android.app.FragmentManager;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,6 +19,7 @@ import android.view.MenuItem;
 import cr.co.sea.seaforms.Controller.Fragments.ClienteFormFragment;
 import cr.co.sea.seaforms.Controller.Fragments.DatosPersonalesFormFragment;
 import cr.co.sea.seaforms.Controller.Fragments.MainFragment;
+import cr.co.sea.seaforms.Controller.Fragments.SelectFormFragment;
 import cr.co.sea.seaforms.R;
 
 public class MainActivity extends AppCompatActivity
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -92,10 +95,9 @@ public class MainActivity extends AppCompatActivity
         FragmentManager fm = getFragmentManager();
         if (id == R.id.nav_camera) {
             Intent i = new Intent(getApplicationContext(), TabFormActivity.class);
-            //Fire that second activity
             startActivity(i);
         } else if (id == R.id.nav_gallery) {
-
+            fm.beginTransaction().replace(R.id.content_frame, new SelectFormFragment()).commit();
 
         } else if (id == R.id.nav_slideshow) {
 

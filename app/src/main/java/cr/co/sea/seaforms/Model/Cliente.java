@@ -17,6 +17,7 @@ import de.greenrobot.dao.DaoException;
 public class Cliente {
 
     private Long id;
+    private String CliTipoIdentificacion;
     private String CliIdentificacion;
     private String CliPasaporte;
     /** Not-null value. */
@@ -62,8 +63,9 @@ public class Cliente {
         this.id = id;
     }
 
-    public Cliente(Long id, String CliIdentificacion, String CliPasaporte, String CliNombre, String CliApellido1, String CliApellido2, String CliEmail, String CliSexo, java.util.Date CliFechaNacimiento, String CliTelCasa, String CliTelCel, String CliTelCel2, String CliFax, String CliDireccion, String CliOtrasSenas, String CliProvincia, String CliCanton, String CliDistrito, String CliTipoTarjeta, String CliNumeroTarjeta, String CliNumeroSeguridad, String CliVencimientoTarjeta) {
+    public Cliente(Long id, String CliTipoIdentificacion, String CliIdentificacion, String CliPasaporte, String CliNombre, String CliApellido1, String CliApellido2, String CliEmail, String CliSexo, java.util.Date CliFechaNacimiento, String CliTelCasa, String CliTelCel, String CliTelCel2, String CliFax, String CliDireccion, String CliOtrasSenas, String CliProvincia, String CliCanton, String CliDistrito, String CliTipoTarjeta, String CliNumeroTarjeta, String CliNumeroSeguridad, String CliVencimientoTarjeta) {
         this.id = id;
+        this.CliTipoIdentificacion = CliTipoIdentificacion;
         this.CliIdentificacion = CliIdentificacion;
         this.CliPasaporte = CliPasaporte;
         this.CliNombre = CliNombre;
@@ -99,6 +101,14 @@ public class Cliente {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getCliTipoIdentificacion() {
+        return CliTipoIdentificacion;
+    }
+
+    public void setCliTipoIdentificacion(String CliTipoIdentificacion) {
+        this.CliTipoIdentificacion = CliTipoIdentificacion;
     }
 
     public String getCliIdentificacion() {
@@ -329,6 +339,9 @@ public class Cliente {
     // KEEP METHODS END
 
     public static Cliente getClienteSingleton() {
+        if(clienteSingleton == null){
+            clienteSingleton = new Cliente();
+        }
         return clienteSingleton;
     }
 }

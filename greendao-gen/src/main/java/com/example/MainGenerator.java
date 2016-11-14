@@ -33,6 +33,7 @@ public class MainGenerator {
     private static Entity addCliente(final Schema schema) {
         Entity cliente = schema.addEntity("Cliente");
         cliente.addIdProperty().primaryKey().autoincrement();
+        cliente.addStringProperty("CliTipoIdentificacion");
         cliente.addStringProperty("CliIdentificacion");
         cliente.addStringProperty("CliPasaporte");
         cliente.addStringProperty("CliNombre").notNull();
@@ -62,6 +63,7 @@ public class MainGenerator {
         Entity contrato = schema.addEntity("Contrato");
         contrato.addIdProperty().primaryKey().autoincrement();
         contrato.addDateProperty("ConFecha");
+        contrato.addFloatProperty("ConMontoTotal");
         contrato.addByteArrayProperty("ConFoto1");
         contrato.addByteArrayProperty("ConFoto2");
         contrato.addByteArrayProperty("ConFoto3");
