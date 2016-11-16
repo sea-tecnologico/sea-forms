@@ -4,57 +4,81 @@ package cr.co.sea.seaforms.Model;
 
 // KEEP INCLUDES - put your custom includes here
 // KEEP INCLUDES END
-
-import java.util.Arrays;
-
 /**
  * Entity mapped to table "CONTRATO".
  */
 public class Contrato {
 
     private Long id;
-    private java.util.Date ConFecha;
-    private Float ConMontoTotal;
-    private byte[] ConFoto1;
-    private byte[] ConFoto2;
-    private byte[] ConFoto3;
-    private byte[] ConFoto4;
-    private String ConGenerico1;
-    private String ConGenerico2;
-    private String ConGenerico3;
-    private String ConGenerico4;
-    private String ConGenerico5;
-    private String ConGenerico6;
-    private String ConGenerico7;
-    private String ConGenerico8;
-    private String ConGenerico9;
-    private String ConGenerico10;
-    private String ConGenerico11;
-    private String ConGenerico12;
-    private String ConGenerico13;
-    private String ConGenerico14;
-    private String ConGenerico15;
-    private String ConGenerico16;
-    private String ConGenerico17;
-    private String ConGenerico18;
-    private String ConGenerico19;
-    private String ConGenerico20;
-    private String ConGenerico21;
-    private String ConGenerico22;
-    private String ConGenerico23;
-    private String ConGenerico24;
-    private String ConGenerico25;
-    private String ConGenerico26;
-    private String ConGenerico27;
-    private String ConGenerico28;
-    private String ConGenerico29;
-    private String ConGenerico30;
-    private long CliId;
+    private java.util.Date Fecha;
+    private String TipoIdentificacion;
+    private String Identificacion;
+    private String Pasaporte;
+    /** Not-null value. */
+    private String Nombre;
+    /** Not-null value. */
+    private String Apellido1;
+    private String Apellido2;
+    private String Email;
+    /** Not-null value. */
+    private String Sexo;
+    /** Not-null value. */
+    private java.util.Date FechaNacimiento;
+    private String TelCasa;
+    private String TelCel;
+    private String TelCel2;
+    private String Fax;
+    /** Not-null value. */
+    private String Direccion;
+    private String OtrasSenas;
+    private String Provincia;
+    private String Canton;
+    private String Distrito;
+    private String TipoTarjeta;
+    private String NumeroTarjeta;
+    private String NumeroSeguridad;
+    private String VencimientoTarjeta;
+    private Float MontoTotal;
+    private byte[] Foto1;
+    private byte[] Foto2;
+    private byte[] Foto3;
+    private byte[] Foto4;
+    private byte[] FotoFirma;
+    private String Generico1;
+    private String Generico2;
+    private String Generico3;
+    private String Generico4;
+    private String Generico5;
+    private String Generico6;
+    private String Generico7;
+    private String Generico8;
+    private String Generico9;
+    private String Generico10;
+    private String Generico11;
+    private String Generico12;
+    private String Generico13;
+    private String Generico14;
+    private String Generico15;
+    private String Generico16;
+    private String Generico17;
+    private String Generico18;
+    private String Generico19;
+    private String Generico20;
+    private String Generico21;
+    private String Generico22;
+    private String Generico23;
+    private String Generico24;
+    private String Generico25;
+    private String Generico26;
+    private String Generico27;
+    private String Generico28;
+    private String Generico29;
+    private String Generico30;
 
     // KEEP FIELDS - put your custom fields here
-    // KEEP FIELDS END
     static Contrato contratoSingleton;
-    final int[] validaPestanas = {-1-1,-1,-1};
+    // KEEP FIELDS END
+
     public Contrato() {
     }
 
@@ -62,45 +86,67 @@ public class Contrato {
         this.id = id;
     }
 
-    public Contrato(Long id, java.util.Date ConFecha, Float ConMontoTotal, byte[] ConFoto1, byte[] ConFoto2, byte[] ConFoto3, byte[] ConFoto4, String ConGenerico1, String ConGenerico2, String ConGenerico3, String ConGenerico4, String ConGenerico5, String ConGenerico6, String ConGenerico7, String ConGenerico8, String ConGenerico9, String ConGenerico10, String ConGenerico11, String ConGenerico12, String ConGenerico13, String ConGenerico14, String ConGenerico15, String ConGenerico16, String ConGenerico17, String ConGenerico18, String ConGenerico19, String ConGenerico20, String ConGenerico21, String ConGenerico22, String ConGenerico23, String ConGenerico24, String ConGenerico25, String ConGenerico26, String ConGenerico27, String ConGenerico28, String ConGenerico29, String ConGenerico30, long CliId) {
+    public Contrato(Long id, java.util.Date Fecha, String TipoIdentificacion, String Identificacion, String Pasaporte, String Nombre, String Apellido1, String Apellido2, String Email, String Sexo, java.util.Date FechaNacimiento, String TelCasa, String TelCel, String TelCel2, String Fax, String Direccion, String OtrasSenas, String Provincia, String Canton, String Distrito, String TipoTarjeta, String NumeroTarjeta, String NumeroSeguridad, String VencimientoTarjeta, Float MontoTotal, byte[] Foto1, byte[] Foto2, byte[] Foto3, byte[] Foto4, byte[] FotoFirma, String Generico1, String Generico2, String Generico3, String Generico4, String Generico5, String Generico6, String Generico7, String Generico8, String Generico9, String Generico10, String Generico11, String Generico12, String Generico13, String Generico14, String Generico15, String Generico16, String Generico17, String Generico18, String Generico19, String Generico20, String Generico21, String Generico22, String Generico23, String Generico24, String Generico25, String Generico26, String Generico27, String Generico28, String Generico29, String Generico30) {
         this.id = id;
-        this.ConFecha = ConFecha;
-        this.ConMontoTotal = ConMontoTotal;
-        this.ConFoto1 = ConFoto1;
-        this.ConFoto2 = ConFoto2;
-        this.ConFoto3 = ConFoto3;
-        this.ConFoto4 = ConFoto4;
-        this.ConGenerico1 = ConGenerico1;
-        this.ConGenerico2 = ConGenerico2;
-        this.ConGenerico3 = ConGenerico3;
-        this.ConGenerico4 = ConGenerico4;
-        this.ConGenerico5 = ConGenerico5;
-        this.ConGenerico6 = ConGenerico6;
-        this.ConGenerico7 = ConGenerico7;
-        this.ConGenerico8 = ConGenerico8;
-        this.ConGenerico9 = ConGenerico9;
-        this.ConGenerico10 = ConGenerico10;
-        this.ConGenerico11 = ConGenerico11;
-        this.ConGenerico12 = ConGenerico12;
-        this.ConGenerico13 = ConGenerico13;
-        this.ConGenerico14 = ConGenerico14;
-        this.ConGenerico15 = ConGenerico15;
-        this.ConGenerico16 = ConGenerico16;
-        this.ConGenerico17 = ConGenerico17;
-        this.ConGenerico18 = ConGenerico18;
-        this.ConGenerico19 = ConGenerico19;
-        this.ConGenerico20 = ConGenerico20;
-        this.ConGenerico21 = ConGenerico21;
-        this.ConGenerico22 = ConGenerico22;
-        this.ConGenerico23 = ConGenerico23;
-        this.ConGenerico24 = ConGenerico24;
-        this.ConGenerico25 = ConGenerico25;
-        this.ConGenerico26 = ConGenerico26;
-        this.ConGenerico27 = ConGenerico27;
-        this.ConGenerico28 = ConGenerico28;
-        this.ConGenerico29 = ConGenerico29;
-        this.ConGenerico30 = ConGenerico30;
-        this.CliId = CliId;
+        this.Fecha = Fecha;
+        this.TipoIdentificacion = TipoIdentificacion;
+        this.Identificacion = Identificacion;
+        this.Pasaporte = Pasaporte;
+        this.Nombre = Nombre;
+        this.Apellido1 = Apellido1;
+        this.Apellido2 = Apellido2;
+        this.Email = Email;
+        this.Sexo = Sexo;
+        this.FechaNacimiento = FechaNacimiento;
+        this.TelCasa = TelCasa;
+        this.TelCel = TelCel;
+        this.TelCel2 = TelCel2;
+        this.Fax = Fax;
+        this.Direccion = Direccion;
+        this.OtrasSenas = OtrasSenas;
+        this.Provincia = Provincia;
+        this.Canton = Canton;
+        this.Distrito = Distrito;
+        this.TipoTarjeta = TipoTarjeta;
+        this.NumeroTarjeta = NumeroTarjeta;
+        this.NumeroSeguridad = NumeroSeguridad;
+        this.VencimientoTarjeta = VencimientoTarjeta;
+        this.MontoTotal = MontoTotal;
+        this.Foto1 = Foto1;
+        this.Foto2 = Foto2;
+        this.Foto3 = Foto3;
+        this.Foto4 = Foto4;
+        this.FotoFirma = FotoFirma;
+        this.Generico1 = Generico1;
+        this.Generico2 = Generico2;
+        this.Generico3 = Generico3;
+        this.Generico4 = Generico4;
+        this.Generico5 = Generico5;
+        this.Generico6 = Generico6;
+        this.Generico7 = Generico7;
+        this.Generico8 = Generico8;
+        this.Generico9 = Generico9;
+        this.Generico10 = Generico10;
+        this.Generico11 = Generico11;
+        this.Generico12 = Generico12;
+        this.Generico13 = Generico13;
+        this.Generico14 = Generico14;
+        this.Generico15 = Generico15;
+        this.Generico16 = Generico16;
+        this.Generico17 = Generico17;
+        this.Generico18 = Generico18;
+        this.Generico19 = Generico19;
+        this.Generico20 = Generico20;
+        this.Generico21 = Generico21;
+        this.Generico22 = Generico22;
+        this.Generico23 = Generico23;
+        this.Generico24 = Generico24;
+        this.Generico25 = Generico25;
+        this.Generico26 = Generico26;
+        this.Generico27 = Generico27;
+        this.Generico28 = Generico28;
+        this.Generico29 = Generico29;
+        this.Generico30 = Generico30;
     }
 
     public Long getId() {
@@ -111,306 +157,489 @@ public class Contrato {
         this.id = id;
     }
 
-    public java.util.Date getConFecha() {
-        return ConFecha;
+    public java.util.Date getFecha() {
+        return Fecha;
     }
 
-    public void setConFecha(java.util.Date ConFecha) {
-        this.ConFecha = ConFecha;
+    public void setFecha(java.util.Date Fecha) {
+        this.Fecha = Fecha;
     }
 
-    public Float getConMontoTotal() {
-        return ConMontoTotal;
+    public String getTipoIdentificacion() {
+        return TipoIdentificacion;
     }
 
-    public void setConMontoTotal(Float ConMontoTotal) {
-        this.ConMontoTotal = ConMontoTotal;
+    public void setTipoIdentificacion(String TipoIdentificacion) {
+        this.TipoIdentificacion = TipoIdentificacion;
     }
 
-    public byte[] getConFoto1() {
-        return ConFoto1;
+    public String getIdentificacion() {
+        return Identificacion;
     }
 
-    public void setConFoto1(byte[] ConFoto1) {
-        this.ConFoto1 = ConFoto1;
+    public void setIdentificacion(String Identificacion) {
+        this.Identificacion = Identificacion;
     }
 
-    public byte[] getConFoto2() {
-        return ConFoto2;
+    public String getPasaporte() {
+        return Pasaporte;
     }
 
-    public void setConFoto2(byte[] ConFoto2) {
-        this.ConFoto2 = ConFoto2;
+    public void setPasaporte(String Pasaporte) {
+        this.Pasaporte = Pasaporte;
     }
 
-    public byte[] getConFoto3() {
-        return ConFoto3;
+    /** Not-null value. */
+    public String getNombre() {
+        return Nombre;
     }
 
-    public void setConFoto3(byte[] ConFoto3) {
-        this.ConFoto3 = ConFoto3;
+    /** Not-null value; ensure this value is available before it is saved to the database. */
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
     }
 
-    public byte[] getConFoto4() {
-        return ConFoto4;
+    /** Not-null value. */
+    public String getApellido1() {
+        return Apellido1;
     }
 
-    public void setConFoto4(byte[] ConFoto4) {
-        this.ConFoto4 = ConFoto4;
+    /** Not-null value; ensure this value is available before it is saved to the database. */
+    public void setApellido1(String Apellido1) {
+        this.Apellido1 = Apellido1;
     }
 
-    public String getConGenerico1() {
-        return ConGenerico1;
+    public String getApellido2() {
+        return Apellido2;
     }
 
-    public void setConGenerico1(String ConGenerico1) {
-        this.ConGenerico1 = ConGenerico1;
+    public void setApellido2(String Apellido2) {
+        this.Apellido2 = Apellido2;
     }
 
-    public String getConGenerico2() {
-        return ConGenerico2;
+    public String getEmail() {
+        return Email;
     }
 
-    public void setConGenerico2(String ConGenerico2) {
-        this.ConGenerico2 = ConGenerico2;
+    public void setEmail(String Email) {
+        this.Email = Email;
     }
 
-    public String getConGenerico3() {
-        return ConGenerico3;
+    /** Not-null value. */
+    public String getSexo() {
+        return Sexo;
     }
 
-    public void setConGenerico3(String ConGenerico3) {
-        this.ConGenerico3 = ConGenerico3;
+    /** Not-null value; ensure this value is available before it is saved to the database. */
+    public void setSexo(String Sexo) {
+        this.Sexo = Sexo;
     }
 
-    public String getConGenerico4() {
-        return ConGenerico4;
+    /** Not-null value. */
+    public java.util.Date getFechaNacimiento() {
+        return FechaNacimiento;
     }
 
-    public void setConGenerico4(String ConGenerico4) {
-        this.ConGenerico4 = ConGenerico4;
+    /** Not-null value; ensure this value is available before it is saved to the database. */
+    public void setFechaNacimiento(java.util.Date FechaNacimiento) {
+        this.FechaNacimiento = FechaNacimiento;
     }
 
-    public String getConGenerico5() {
-        return ConGenerico5;
+    public String getTelCasa() {
+        return TelCasa;
     }
 
-    public void setConGenerico5(String ConGenerico5) {
-        this.ConGenerico5 = ConGenerico5;
+    public void setTelCasa(String TelCasa) {
+        this.TelCasa = TelCasa;
     }
 
-    public String getConGenerico6() {
-        return ConGenerico6;
+    public String getTelCel() {
+        return TelCel;
     }
 
-    public void setConGenerico6(String ConGenerico6) {
-        this.ConGenerico6 = ConGenerico6;
+    public void setTelCel(String TelCel) {
+        this.TelCel = TelCel;
     }
 
-    public String getConGenerico7() {
-        return ConGenerico7;
+    public String getTelCel2() {
+        return TelCel2;
     }
 
-    public void setConGenerico7(String ConGenerico7) {
-        this.ConGenerico7 = ConGenerico7;
+    public void setTelCel2(String TelCel2) {
+        this.TelCel2 = TelCel2;
     }
 
-    public String getConGenerico8() {
-        return ConGenerico8;
+    public String getFax() {
+        return Fax;
     }
 
-    public void setConGenerico8(String ConGenerico8) {
-        this.ConGenerico8 = ConGenerico8;
+    public void setFax(String Fax) {
+        this.Fax = Fax;
     }
 
-    public String getConGenerico9() {
-        return ConGenerico9;
+    /** Not-null value. */
+    public String getDireccion() {
+        return Direccion;
     }
 
-    public void setConGenerico9(String ConGenerico9) {
-        this.ConGenerico9 = ConGenerico9;
+    /** Not-null value; ensure this value is available before it is saved to the database. */
+    public void setDireccion(String Direccion) {
+        this.Direccion = Direccion;
     }
 
-    public String getConGenerico10() {
-        return ConGenerico10;
+    public String getOtrasSenas() {
+        return OtrasSenas;
     }
 
-    public void setConGenerico10(String ConGenerico10) {
-        this.ConGenerico10 = ConGenerico10;
+    public void setOtrasSenas(String OtrasSenas) {
+        this.OtrasSenas = OtrasSenas;
     }
 
-    public String getConGenerico11() {
-        return ConGenerico11;
+    public String getProvincia() {
+        return Provincia;
     }
 
-    public void setConGenerico11(String ConGenerico11) {
-        this.ConGenerico11 = ConGenerico11;
+    public void setProvincia(String Provincia) {
+        this.Provincia = Provincia;
     }
 
-    public String getConGenerico12() {
-        return ConGenerico12;
+    public String getCanton() {
+        return Canton;
     }
 
-    public void setConGenerico12(String ConGenerico12) {
-        this.ConGenerico12 = ConGenerico12;
+    public void setCanton(String Canton) {
+        this.Canton = Canton;
     }
 
-    public String getConGenerico13() {
-        return ConGenerico13;
+    public String getDistrito() {
+        return Distrito;
     }
 
-    public void setConGenerico13(String ConGenerico13) {
-        this.ConGenerico13 = ConGenerico13;
+    public void setDistrito(String Distrito) {
+        this.Distrito = Distrito;
     }
 
-    public String getConGenerico14() {
-        return ConGenerico14;
+    public String getTipoTarjeta() {
+        return TipoTarjeta;
     }
 
-    public void setConGenerico14(String ConGenerico14) {
-        this.ConGenerico14 = ConGenerico14;
+    public void setTipoTarjeta(String TipoTarjeta) {
+        this.TipoTarjeta = TipoTarjeta;
     }
 
-    public String getConGenerico15() {
-        return ConGenerico15;
+    public String getNumeroTarjeta() {
+        return NumeroTarjeta;
     }
 
-    public void setConGenerico15(String ConGenerico15) {
-        this.ConGenerico15 = ConGenerico15;
+    public void setNumeroTarjeta(String NumeroTarjeta) {
+        this.NumeroTarjeta = NumeroTarjeta;
     }
 
-    public String getConGenerico16() {
-        return ConGenerico16;
+    public String getNumeroSeguridad() {
+        return NumeroSeguridad;
     }
 
-    public void setConGenerico16(String ConGenerico16) {
-        this.ConGenerico16 = ConGenerico16;
+    public void setNumeroSeguridad(String NumeroSeguridad) {
+        this.NumeroSeguridad = NumeroSeguridad;
     }
 
-    public String getConGenerico17() {
-        return ConGenerico17;
+    public String getVencimientoTarjeta() {
+        return VencimientoTarjeta;
     }
 
-    public void setConGenerico17(String ConGenerico17) {
-        this.ConGenerico17 = ConGenerico17;
+    public void setVencimientoTarjeta(String VencimientoTarjeta) {
+        this.VencimientoTarjeta = VencimientoTarjeta;
     }
 
-    public String getConGenerico18() {
-        return ConGenerico18;
+    public Float getMontoTotal() {
+        return MontoTotal;
     }
 
-    public void setConGenerico18(String ConGenerico18) {
-        this.ConGenerico18 = ConGenerico18;
+    public void setMontoTotal(Float MontoTotal) {
+        this.MontoTotal = MontoTotal;
     }
 
-    public String getConGenerico19() {
-        return ConGenerico19;
+    public byte[] getFoto1() {
+        return Foto1;
     }
 
-    public void setConGenerico19(String ConGenerico19) {
-        this.ConGenerico19 = ConGenerico19;
+    public void setFoto1(byte[] Foto1) {
+        this.Foto1 = Foto1;
     }
 
-    public String getConGenerico20() {
-        return ConGenerico20;
+    public byte[] getFoto2() {
+        return Foto2;
     }
 
-    public void setConGenerico20(String ConGenerico20) {
-        this.ConGenerico20 = ConGenerico20;
+    public void setFoto2(byte[] Foto2) {
+        this.Foto2 = Foto2;
     }
 
-    public String getConGenerico21() {
-        return ConGenerico21;
+    public byte[] getFoto3() {
+        return Foto3;
     }
 
-    public void setConGenerico21(String ConGenerico21) {
-        this.ConGenerico21 = ConGenerico21;
+    public void setFoto3(byte[] Foto3) {
+        this.Foto3 = Foto3;
     }
 
-    public String getConGenerico22() {
-        return ConGenerico22;
+    public byte[] getFoto4() {
+        return Foto4;
     }
 
-    public void setConGenerico22(String ConGenerico22) {
-        this.ConGenerico22 = ConGenerico22;
+    public void setFoto4(byte[] Foto4) {
+        this.Foto4 = Foto4;
     }
 
-    public String getConGenerico23() {
-        return ConGenerico23;
+    public byte[] getFotoFirma() {
+        return FotoFirma;
     }
 
-    public void setConGenerico23(String ConGenerico23) {
-        this.ConGenerico23 = ConGenerico23;
+    public void setFotoFirma(byte[] FotoFirma) {
+        this.FotoFirma = FotoFirma;
     }
 
-    public String getConGenerico24() {
-        return ConGenerico24;
+    public String getGenerico1() {
+        return Generico1;
     }
 
-    public void setConGenerico24(String ConGenerico24) {
-        this.ConGenerico24 = ConGenerico24;
+    public void setGenerico1(String Generico1) {
+        this.Generico1 = Generico1;
     }
 
-    public String getConGenerico25() {
-        return ConGenerico25;
+    public String getGenerico2() {
+        return Generico2;
     }
 
-    public void setConGenerico25(String ConGenerico25) {
-        this.ConGenerico25 = ConGenerico25;
+    public void setGenerico2(String Generico2) {
+        this.Generico2 = Generico2;
     }
 
-    public String getConGenerico26() {
-        return ConGenerico26;
+    public String getGenerico3() {
+        return Generico3;
     }
 
-    public void setConGenerico26(String ConGenerico26) {
-        this.ConGenerico26 = ConGenerico26;
+    public void setGenerico3(String Generico3) {
+        this.Generico3 = Generico3;
     }
 
-    public String getConGenerico27() {
-        return ConGenerico27;
+    public String getGenerico4() {
+        return Generico4;
     }
 
-    public void setConGenerico27(String ConGenerico27) {
-        this.ConGenerico27 = ConGenerico27;
+    public void setGenerico4(String Generico4) {
+        this.Generico4 = Generico4;
     }
 
-    public String getConGenerico28() {
-        return ConGenerico28;
+    public String getGenerico5() {
+        return Generico5;
     }
 
-    public void setConGenerico28(String ConGenerico28) {
-        this.ConGenerico28 = ConGenerico28;
+    public void setGenerico5(String Generico5) {
+        this.Generico5 = Generico5;
     }
 
-    public String getConGenerico29() {
-        return ConGenerico29;
+    public String getGenerico6() {
+        return Generico6;
     }
 
-    public void setConGenerico29(String ConGenerico29) {
-        this.ConGenerico29 = ConGenerico29;
+    public void setGenerico6(String Generico6) {
+        this.Generico6 = Generico6;
     }
 
-    public String getConGenerico30() {
-        return ConGenerico30;
+    public String getGenerico7() {
+        return Generico7;
     }
 
-    public void setConGenerico30(String ConGenerico30) {
-        this.ConGenerico30 = ConGenerico30;
+    public void setGenerico7(String Generico7) {
+        this.Generico7 = Generico7;
     }
 
-    public long getCliId() {
-        return CliId;
+    public String getGenerico8() {
+        return Generico8;
     }
 
-    public void setCliId(long CliId) {
-        this.CliId = CliId;
+    public void setGenerico8(String Generico8) {
+        this.Generico8 = Generico8;
+    }
+
+    public String getGenerico9() {
+        return Generico9;
+    }
+
+    public void setGenerico9(String Generico9) {
+        this.Generico9 = Generico9;
+    }
+
+    public String getGenerico10() {
+        return Generico10;
+    }
+
+    public void setGenerico10(String Generico10) {
+        this.Generico10 = Generico10;
+    }
+
+    public String getGenerico11() {
+        return Generico11;
+    }
+
+    public void setGenerico11(String Generico11) {
+        this.Generico11 = Generico11;
+    }
+
+    public String getGenerico12() {
+        return Generico12;
+    }
+
+    public void setGenerico12(String Generico12) {
+        this.Generico12 = Generico12;
+    }
+
+    public String getGenerico13() {
+        return Generico13;
+    }
+
+    public void setGenerico13(String Generico13) {
+        this.Generico13 = Generico13;
+    }
+
+    public String getGenerico14() {
+        return Generico14;
+    }
+
+    public void setGenerico14(String Generico14) {
+        this.Generico14 = Generico14;
+    }
+
+    public String getGenerico15() {
+        return Generico15;
+    }
+
+    public void setGenerico15(String Generico15) {
+        this.Generico15 = Generico15;
+    }
+
+    public String getGenerico16() {
+        return Generico16;
+    }
+
+    public void setGenerico16(String Generico16) {
+        this.Generico16 = Generico16;
+    }
+
+    public String getGenerico17() {
+        return Generico17;
+    }
+
+    public void setGenerico17(String Generico17) {
+        this.Generico17 = Generico17;
+    }
+
+    public String getGenerico18() {
+        return Generico18;
+    }
+
+    public void setGenerico18(String Generico18) {
+        this.Generico18 = Generico18;
+    }
+
+    public String getGenerico19() {
+        return Generico19;
+    }
+
+    public void setGenerico19(String Generico19) {
+        this.Generico19 = Generico19;
+    }
+
+    public String getGenerico20() {
+        return Generico20;
+    }
+
+    public void setGenerico20(String Generico20) {
+        this.Generico20 = Generico20;
+    }
+
+    public String getGenerico21() {
+        return Generico21;
+    }
+
+    public void setGenerico21(String Generico21) {
+        this.Generico21 = Generico21;
+    }
+
+    public String getGenerico22() {
+        return Generico22;
+    }
+
+    public void setGenerico22(String Generico22) {
+        this.Generico22 = Generico22;
+    }
+
+    public String getGenerico23() {
+        return Generico23;
+    }
+
+    public void setGenerico23(String Generico23) {
+        this.Generico23 = Generico23;
+    }
+
+    public String getGenerico24() {
+        return Generico24;
+    }
+
+    public void setGenerico24(String Generico24) {
+        this.Generico24 = Generico24;
+    }
+
+    public String getGenerico25() {
+        return Generico25;
+    }
+
+    public void setGenerico25(String Generico25) {
+        this.Generico25 = Generico25;
+    }
+
+    public String getGenerico26() {
+        return Generico26;
+    }
+
+    public void setGenerico26(String Generico26) {
+        this.Generico26 = Generico26;
+    }
+
+    public String getGenerico27() {
+        return Generico27;
+    }
+
+    public void setGenerico27(String Generico27) {
+        this.Generico27 = Generico27;
+    }
+
+    public String getGenerico28() {
+        return Generico28;
+    }
+
+    public void setGenerico28(String Generico28) {
+        this.Generico28 = Generico28;
+    }
+
+    public String getGenerico29() {
+        return Generico29;
+    }
+
+    public void setGenerico29(String Generico29) {
+        this.Generico29 = Generico29;
+    }
+
+    public String getGenerico30() {
+        return Generico30;
+    }
+
+    public void setGenerico30(String Generico30) {
+        this.Generico30 = Generico30;
     }
 
     // KEEP METHODS - put your custom methods here
-    // KEEP METHODS END
-
-
     public static Contrato getContratoSingleton() {
         if(contratoSingleton == null){
             contratoSingleton = new Contrato();
@@ -422,7 +651,9 @@ public class Contrato {
     public String toString() {
         return "Contrato{" +
                 "id=" + id +
-                ", ConFecha=" + ConFecha +
+                ", ConFecha=" + Fecha +
                 '}';
     }
+    // KEEP METHODS END
+
 }

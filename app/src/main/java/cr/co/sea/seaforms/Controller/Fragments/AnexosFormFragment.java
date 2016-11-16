@@ -6,42 +6,19 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 
-import com.telerik.widget.dataform.engine.DataFormMetadata;
-import com.telerik.widget.dataform.visualization.RadDataForm;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.StringWriter;
-import java.io.Writer;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.SortedSet;
-import java.util.TreeSet;
 
-import cr.co.sea.seaforms.DAO.ClienteDao;
 import cr.co.sea.seaforms.DAO.ContratoDao;
 import cr.co.sea.seaforms.DAO.DaoMaster;
 import cr.co.sea.seaforms.DAO.DaoSession;
-import cr.co.sea.seaforms.Model.Contrato;
 import cr.co.sea.seaforms.R;
 
-import static android.app.Activity.RESULT_CANCELED;
 import static android.app.Activity.RESULT_OK;
-import static cr.co.sea.seaforms.Model.Cliente.getClienteSingleton;
 import static cr.co.sea.seaforms.Model.Contrato.getContratoSingleton;
 
 /**
@@ -60,7 +37,6 @@ public class AnexosFormFragment extends Fragment {
     public DaoMaster daoMaster;
     public DaoSession daoSession;
     public ContratoDao contratoDao;
-    public ClienteDao clienteDao;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, final Bundle savedInstanceState) {
@@ -73,7 +49,6 @@ public class AnexosFormFragment extends Fragment {
         daoMaster = new DaoMaster(db);
         daoSession = daoMaster.newSession();
         contratoDao = daoSession.getContratoDao();
-        clienteDao = daoSession.getClienteDao();
         /*********************************/
         foto1=(ImageView)rootView.findViewById(R.id.imvFoto1);
         foto1.setOnClickListener(new View.OnClickListener() {
@@ -116,8 +91,7 @@ public class AnexosFormFragment extends Fragment {
             String campos = "";
             @Override
             public void onClick(View v) {
-                clienteDao.insertOrReplace(getClienteSingleton());
-                getContratoSingleton().setCliId(getClienteSingleton().getId());
+
                 contratoDao.insertOrReplace(getContratoSingleton());
 
                 }
@@ -139,28 +113,28 @@ public class AnexosFormFragment extends Fragment {
                     foto1.setImageBitmap(bp);
                     bp.compress(Bitmap.CompressFormat.PNG, 100, stream);
                     byteArray = stream.toByteArray(); // Este es el objeto que debo guardar en la base de datos local
-                    getContratoSingleton().setConFoto1(byteArray);
+                    getContratoSingleton().setFoto1(byteArray);
                     break;
                 case 2:
                     foto2.setBackgroundResource(0);
                     foto2.setImageBitmap(bp);
                     bp.compress(Bitmap.CompressFormat.PNG, 100, stream);
                     byteArray = stream.toByteArray(); // Este es el objeto que debo guardar en la base de datos local
-                    getContratoSingleton().setConFoto2(byteArray);
+                    getContratoSingleton().setFoto2(byteArray);
                     break;
                 case 3:
                     foto3.setBackgroundResource(0);
                     foto3.setImageBitmap(bp);
                     bp.compress(Bitmap.CompressFormat.PNG, 100, stream);
                     byteArray = stream.toByteArray(); // Este es el objeto que debo guardar en la base de datos local
-                    getContratoSingleton().setConFoto3(byteArray);
+                    getContratoSingleton().setFoto3(byteArray);
                     break;
                 case 4:
                     foto4.setBackgroundResource(0);
                     foto4.setImageBitmap(bp);
                     bp.compress(Bitmap.CompressFormat.PNG, 100, stream);
                     byteArray = stream.toByteArray(); // Este es el objeto que debo guardar en la base de datos local
-                    getContratoSingleton().setConFoto4(byteArray);
+                    getContratoSingleton().setFoto4(byteArray);
                     break;
                 default:
                     break;

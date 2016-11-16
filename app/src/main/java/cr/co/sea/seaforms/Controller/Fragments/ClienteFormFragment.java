@@ -7,10 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.telerik.widget.dataform.visualization.DataFormGroupLayoutManager;
-import com.telerik.widget.dataform.visualization.RadDataForm;
-
-import cr.co.sea.seaforms.Model.Cliente;
 import cr.co.sea.seaforms.R;
 
 /**

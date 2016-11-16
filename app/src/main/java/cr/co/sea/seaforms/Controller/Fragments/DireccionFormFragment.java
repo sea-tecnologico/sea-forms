@@ -22,13 +22,12 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.StringWriter;
 import java.io.Writer;
-import java.sql.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 
 import cr.co.sea.seaforms.R;
 
-import static cr.co.sea.seaforms.Model.Cliente.getClienteSingleton;
+import static cr.co.sea.seaforms.Model.Contrato.getContratoSingleton;
 
 /**
  * Created by asanchezo on 10/11/2016.
@@ -74,11 +73,11 @@ public class DireccionFormFragment extends Fragment {
                 String json = form.getEntity().getSourceObject().toString();
                 try {
                     HashMap<String, Object> map = getHashMapFromJson(json);
-                    getClienteSingleton().setCliProvincia(String.valueOf(map.get("Provincia")));
-                    getClienteSingleton().setCliCanton(String.valueOf(map.get("Canton")));
-                    getClienteSingleton().setCliDistrito(String.valueOf(map.get("Distrito")));
-                    getClienteSingleton().setCliDireccion(String.valueOf(map.get("Direccion")));
-                    getClienteSingleton().setCliOtrasSenas(String.valueOf(map.get("OtrasSenas")));
+                    getContratoSingleton().setProvincia(String.valueOf(map.get("Provincia")));
+                    getContratoSingleton().setCanton(String.valueOf(map.get("Canton")));
+                    getContratoSingleton().setDistrito(String.valueOf(map.get("Distrito")));
+                    getContratoSingleton().setDireccion(String.valueOf(map.get("Direccion")));
+                    getContratoSingleton().setOtrasSenas(String.valueOf(map.get("OtrasSenas")));
                 } catch (JSONException e) {
                     Log.e("JsonTelerik", "Failed parsing " + json, e);
                 }

@@ -12,7 +12,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
+
 import java.util.List;
+
 import cr.co.sea.seaforms.DAO.ContratoDao;
 import cr.co.sea.seaforms.DAO.DaoMaster;
 import cr.co.sea.seaforms.DAO.DaoSession;
@@ -31,7 +33,7 @@ public class SelectFormFragment extends Fragment {
     public DaoMaster daoMaster;
     public DaoSession daoSession;
     public ContratoDao contratoDao;
-    private static String sql_contratos = "SELECT  "+ContratoDao.Properties.ConFoto1+" FROM "+ContratoDao.TABLENAME +" ORDER BY 1 ASC";
+    private static String sql_contratos = "SELECT  "+ContratoDao.Properties.Foto1+" FROM "+ContratoDao.TABLENAME +" ORDER BY 1 ASC";
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -51,7 +53,7 @@ public class SelectFormFragment extends Fragment {
         Contrato contrato = new Contrato();
         contrato = (Contrato) contratoList.get(0);
         //byte[] data = contrato.getConFoto1().getBytes();
-        Bitmap bmp = BitmapFactory.decodeByteArray(contrato.getConFoto1(), 0, contrato.getConFoto1().length);
+        Bitmap bmp = BitmapFactory.decodeByteArray(contrato.getFoto1(), 0, contrato.getFoto1().length);
         iVFoto.setImageBitmap(bmp);
         return  rootView;
     }

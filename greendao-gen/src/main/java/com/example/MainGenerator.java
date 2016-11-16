@@ -2,7 +2,6 @@ package com.example;
 
 import de.greenrobot.daogenerator.DaoGenerator;
 import de.greenrobot.daogenerator.Entity;
-import de.greenrobot.daogenerator.Property;
 import de.greenrobot.daogenerator.Schema;
 
 public class MainGenerator {
@@ -23,14 +22,14 @@ public class MainGenerator {
     }
 
     private static void addTables(final Schema schema) {
-        Entity cli = addCliente(schema);
+        //Entity cli = addCliente(schema);
         Entity contrato = addContrato(schema);
         Entity formulario = addFormulario(schema);
-        Property userId = contrato.addLongProperty("CliId").notNull().getProperty();
-        cli.addToMany(contrato, userId, "cliContratos");
+       // Property userId = contrato.addLongProperty("CliId").notNull().getProperty();
+      //  cli.addToMany(contrato, userId, "cliContratos");
     }
 
-    private static Entity addCliente(final Schema schema) {
+   /* private static Entity addCliente(final Schema schema) {
         Entity cliente = schema.addEntity("Cliente");
         cliente.addIdProperty().primaryKey().autoincrement();
         cliente.addStringProperty("CliTipoIdentificacion");
@@ -57,47 +56,70 @@ public class MainGenerator {
         cliente.addStringProperty("CliVencimientoTarjeta");
 
         return cliente;
-    }
+    }*/
 
     private static Entity addContrato(final Schema schema) {
         Entity contrato = schema.addEntity("Contrato");
         contrato.addIdProperty().primaryKey().autoincrement();
-        contrato.addDateProperty("ConFecha");
-        contrato.addFloatProperty("ConMontoTotal");
-        contrato.addByteArrayProperty("ConFoto1");
-        contrato.addByteArrayProperty("ConFoto2");
-        contrato.addByteArrayProperty("ConFoto3");
-        contrato.addByteArrayProperty("ConFoto4");
-        contrato.addStringProperty("ConGenerico1");
-        contrato.addStringProperty("ConGenerico2");
-        contrato.addStringProperty("ConGenerico3");
-        contrato.addStringProperty("ConGenerico4");
-        contrato.addStringProperty("ConGenerico5");
-        contrato.addStringProperty("ConGenerico6");
-        contrato.addStringProperty("ConGenerico7");
-        contrato.addStringProperty("ConGenerico8");
-        contrato.addStringProperty("ConGenerico9");
-        contrato.addStringProperty("ConGenerico10");
-        contrato.addStringProperty("ConGenerico11");
-        contrato.addStringProperty("ConGenerico12");
-        contrato.addStringProperty("ConGenerico13");
-        contrato.addStringProperty("ConGenerico14");
-        contrato.addStringProperty("ConGenerico15");
-        contrato.addStringProperty("ConGenerico16");
-        contrato.addStringProperty("ConGenerico17");
-        contrato.addStringProperty("ConGenerico18");
-        contrato.addStringProperty("ConGenerico19");
-        contrato.addStringProperty("ConGenerico20");
-        contrato.addStringProperty("ConGenerico21");
-        contrato.addStringProperty("ConGenerico22");
-        contrato.addStringProperty("ConGenerico23");
-        contrato.addStringProperty("ConGenerico24");
-        contrato.addStringProperty("ConGenerico25");
-        contrato.addStringProperty("ConGenerico26");
-        contrato.addStringProperty("ConGenerico27");
-        contrato.addStringProperty("ConGenerico28");
-        contrato.addStringProperty("ConGenerico29");
-        contrato.addStringProperty("ConGenerico30");
+        contrato.addDateProperty("Fecha");
+        contrato.addStringProperty("TipoIdentificacion");
+        contrato.addStringProperty("Identificacion");
+        contrato.addStringProperty("Pasaporte");
+        contrato.addStringProperty("Nombre").notNull();
+        contrato.addStringProperty("Apellido1").notNull();
+        contrato.addStringProperty("Apellido2");
+        contrato.addStringProperty("Email");
+        contrato.addStringProperty("Sexo").notNull();
+        contrato.addDateProperty("FechaNacimiento").notNull();
+        contrato.addStringProperty("TelCasa");
+        contrato.addStringProperty("TelCel");
+        contrato.addStringProperty("TelCel2");
+        contrato.addStringProperty("Fax");
+        contrato.addStringProperty("Direccion").notNull();
+        contrato.addStringProperty("OtrasSenas");
+        contrato.addStringProperty("Provincia");
+        contrato.addStringProperty("Canton");
+        contrato.addStringProperty("Distrito");
+        contrato.addStringProperty("TipoTarjeta");
+        contrato.addStringProperty("NumeroTarjeta");
+        contrato.addStringProperty("NumeroSeguridad");
+        contrato.addStringProperty("VencimientoTarjeta");
+        contrato.addFloatProperty("MontoTotal");
+        contrato.addByteArrayProperty("Foto1");
+        contrato.addByteArrayProperty("Foto2");
+        contrato.addByteArrayProperty("Foto3");
+        contrato.addByteArrayProperty("Foto4");
+        contrato.addByteArrayProperty("FotoFirma");
+        contrato.addStringProperty("Generico1");
+        contrato.addStringProperty("Generico2");
+        contrato.addStringProperty("Generico3");
+        contrato.addStringProperty("Generico4");
+        contrato.addStringProperty("Generico5");
+        contrato.addStringProperty("Generico6");
+        contrato.addStringProperty("Generico7");
+        contrato.addStringProperty("Generico8");
+        contrato.addStringProperty("Generico9");
+        contrato.addStringProperty("Generico10");
+        contrato.addStringProperty("Generico11");
+        contrato.addStringProperty("Generico12");
+        contrato.addStringProperty("Generico13");
+        contrato.addStringProperty("Generico14");
+        contrato.addStringProperty("Generico15");
+        contrato.addStringProperty("Generico16");
+        contrato.addStringProperty("Generico17");
+        contrato.addStringProperty("Generico18");
+        contrato.addStringProperty("Generico19");
+        contrato.addStringProperty("Generico20");
+        contrato.addStringProperty("Generico21");
+        contrato.addStringProperty("Generico22");
+        contrato.addStringProperty("Generico23");
+        contrato.addStringProperty("Generico24");
+        contrato.addStringProperty("Generico25");
+        contrato.addStringProperty("Generico26");
+        contrato.addStringProperty("Generico27");
+        contrato.addStringProperty("Generico28");
+        contrato.addStringProperty("Generico29");
+        contrato.addStringProperty("Generico30");
 
         //contrato.addIntProperty("watchers_count");
 

@@ -22,14 +22,10 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.StringWriter;
 import java.io.Writer;
-import java.sql.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 
 import cr.co.sea.seaforms.R;
-
-import static cr.co.sea.seaforms.Model.Cliente.getClienteSingleton;
-import static cr.co.sea.seaforms.Model.Contrato.getContratoSingleton;
 
 /**
  * Created by asanchezo on 18/10/2016.
@@ -78,7 +74,7 @@ public class GenericosFormFragment extends Fragment {
                    // SortedSet<String> keys = new TreeSet<String>(map.keySet()); // Ordenando al hash map
                    // for (String key : keys) {
                     //Log.i("JsonTelerik",String.valueOf(map.get("key")));
-                    getClienteSingleton().setCliTipoIdentificacion(String.valueOf(map.get("TipoIdentificacion")));
+                    /*getClienteSingleton().setCliTipoIdentificacion(String.valueOf(map.get("TipoIdentificacion")));
                     getClienteSingleton().setCliIdentificacion(String.valueOf(map.get("Identificacion")));
                     getClienteSingleton().setCliNombre(String.valueOf(map.get("Nombre")));
                     getClienteSingleton().setCliApellido1(String.valueOf(map.get("PrimerApellido")));
@@ -92,7 +88,7 @@ public class GenericosFormFragment extends Fragment {
                     getClienteSingleton().setCliTelCasa(String.valueOf(map.get("TelefonoCasa")));
                     getClienteSingleton().setCliTelCel(String.valueOf(map.get("Celular")));
                     getClienteSingleton().setCliTelCel2(String.valueOf(map.get("Celular2")));
-                    getClienteSingleton().setCliFax(String.valueOf(map.get("Fax")));
+                    getClienteSingleton().setCliFax(String.valueOf(map.get("Fax")));*/
                     // }
                 } catch (JSONException e) {
                     Log.e("JsonTelerik", "Failed parsing " + json, e);
