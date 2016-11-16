@@ -54,7 +54,7 @@ public class Contrato {
     // KEEP FIELDS - put your custom fields here
     // KEEP FIELDS END
     static Contrato contratoSingleton;
-
+    final int[] validaPestanas = {-1-1,-1,-1};
     public Contrato() {
     }
 

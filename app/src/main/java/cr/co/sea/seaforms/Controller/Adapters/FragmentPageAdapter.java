@@ -7,10 +7,12 @@ import android.content.Context;
 import android.support.v13.app.FragmentPagerAdapter;
 
 import cr.co.sea.seaforms.Controller.Fragments.AnexosFormFragment;
-import cr.co.sea.seaforms.Controller.Fragments.ClienteFormFragment;
 import cr.co.sea.seaforms.Controller.Fragments.DatosPersonalesFormFragment;
 import cr.co.sea.seaforms.Controller.Fragments.DireccionFormFragment;
+import cr.co.sea.seaforms.Controller.Fragments.GenericosFormFragment;
 import cr.co.sea.seaforms.Controller.Fragments.MetodosPagoFormFragment;
+import cr.co.sea.seaforms.Controller.ePestanas;
+
 
 /**
  * Created by asanchezo on 25/10/2016.
@@ -23,7 +25,7 @@ import cr.co.sea.seaforms.Controller.Fragments.MetodosPagoFormFragment;
 * */
 public class FragmentPageAdapter extends FragmentPagerAdapter {
     private String[] tabTitle = new String[]{"Datos Personales","Dirección","Métodos de pago","Anexos","Datos Genericos"};
-    Context context;
+    private Context context;
     private  int pageCount = 5;
     public FragmentPageAdapter(FragmentManager fm, Context context) {
         super(fm);
@@ -33,28 +35,21 @@ public class FragmentPageAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        switch (position){
+        ePestanas pestanas = ePestanas.values()[position]; // Para usar enum,
+        switch (pestanas){
 
-            case 0:
-                DatosPersonalesFormFragment datosPersonalesFormFragment= new DatosPersonalesFormFragment();
-                return datosPersonalesFormFragment;
-            case 1:
-                DireccionFormFragment direccionFormFragment= new DireccionFormFragment();
-                return direccionFormFragment;
-            case 2:
-                MetodosPagoFormFragment metodosPagoFormFragment= new MetodosPagoFormFragment();
-                return metodosPagoFormFragment;
-
-            case 3:
-                AnexosFormFragment anexosFormFragment= new AnexosFormFragment();
-                return anexosFormFragment;
-
-            case 4:
-                ClienteFormFragment clienteFormFragmentDefault= new ClienteFormFragment();
-                return clienteFormFragmentDefault;
+            case DATOS_PERSONALES:
+                return new DatosPersonalesFormFragment();
+            case DIRECCION:
+                return new DireccionFormFragment();
+            case METODOS_PAGO:
+                return new MetodosPagoFormFragment();
+            case ANEXOS:
+                return new AnexosFormFragment();
+            case DATOS_GENERICOS:
+                return new GenericosFormFragment();
             default:
-                DatosPersonalesFormFragment datosPersonalesFormFragment_default= new DatosPersonalesFormFragment();
-                return datosPersonalesFormFragment_default ;
+                return new DatosPersonalesFormFragment();
 
         }
 
@@ -62,7 +57,6 @@ public class FragmentPageAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-
         return pageCount;
     }
 
@@ -71,4 +65,7 @@ public class FragmentPageAdapter extends FragmentPagerAdapter {
 
         return tabTitle[position];
     }
+
+
+
 }

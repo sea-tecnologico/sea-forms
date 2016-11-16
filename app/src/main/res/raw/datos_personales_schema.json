@@ -12,16 +12,25 @@
     },
     {
       "name": "Identificacion",
-      "editor": "text"
+      "editor": "text",
+      "displayName": "Identificación",
+      "required": true,
+      "validator": "MinimumLength",
+      "validatorParams": {
+        "length": 9,
+        "errorMessage": "La identificación debe tener al menos 9 caracteres"
+      }
     },
     {
       "name": "Nombre",
-      "editor": "text"
+      "editor": "text",
+      "required": true
     },
     {
       "name": "PrimerApellido",
       "displayName": "Primer apellido",
-      "editor": "text"
+      "editor": "text",
+      "required": true
     },
     {
     "name": "SegundoApellido",
@@ -32,7 +41,8 @@
     "name": "CorreoElectronico",
     "editor": "email",
     "validator": "MailValidator",
-    "displayName": "Correo Electrónico"
+    "displayName": "Correo Electrónico",
+    "required": true
     },
     {
     "name": "Sexo",
@@ -42,7 +52,9 @@
     {
     "name": "FechaNacimiento",
     "displayName": "Fecha de nacimiento",
-    "editor": "datepicker"
+    "editor": "datepicker",
+    "dateformat": "yyyy-MM-dd",
+    "required": true
     },
     {
     "name": "TelefonoCasa",

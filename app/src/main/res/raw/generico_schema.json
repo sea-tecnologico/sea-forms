@@ -1,0 +1,43 @@
+{
+  "isReadOnly": false,
+  "commitMode": "immediate",
+  "validationMode": "immediate",
+  "properties":
+  [
+    {
+      "name": "Generico1",
+      "displayName": "Generico1",
+      "editor": "segmentededitor",
+      "valuesProvider": ["Valor1", "Valor2","Valor3"]
+    },
+    {
+      "name": "Generico2",
+      "editor": "number"
+    },
+    {
+      "name": "Generico3",
+      "displayName": "Generico3 - Telefono",
+      "editor": "phone"
+    },
+    {
+      "name": "Generico4",
+      "displayName": "Fecha vencimiento - Generico ",
+      "editor": "datepicker"
+    },
+    {
+      "name": "Generico5",
+      "displayName": "Generico5",
+      "editor": "text"
+    },
+    {
+    "name": "Generico6",
+    "editor": "slider",
+    "validator": "Range",
+    "validatorParams": {
+      "min": 60,
+      "max": 200,
+      "errorMessage": "El valor debe ser entre 60 y 90"
+    }
+    }
+  ]
+}
