@@ -33,12 +33,13 @@ public class SelectFormFragment extends Fragment {
     public DaoMaster daoMaster;
     public DaoSession daoSession;
     public ContratoDao contratoDao;
-    private static String sql_contratos = "SELECT  "+ContratoDao.Properties.Foto1+" FROM "+ContratoDao.TABLENAME +" ORDER BY 1 ASC";
+    private static String sql_contratos = "SELECT  " + ContratoDao.Properties.Foto1 + " FROM " + ContratoDao.TABLENAME + " ORDER BY 1 ASC";
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_selecciona_form,container,false);
+        View rootView = inflater.inflate(R.layout.fragment_selecciona_form, container, false);
         iVFoto = (ImageView) rootView.findViewById(R.id.iVFoto);
         helper = new DaoMaster.DevOpenHelper(rootView.getContext(), "eForms_db", null);
         SQLiteDatabase db = helper.getWritableDatabase();
@@ -47,7 +48,7 @@ public class SelectFormFragment extends Fragment {
         contratoDao = daoSession.getContratoDao();
         List contratoList = listContratos();
         ArrayAdapter<String> adapter2;
-        adapter2 = new ArrayAdapter<String>(rootView.getContext(),android.R.layout.simple_list_item_1,contratoList);
+        adapter2 = new ArrayAdapter<String>(rootView.getContext(), android.R.layout.simple_list_item_1, contratoList);
         spinner_formularios = (Spinner) rootView.findViewById(R.id.spinnerFormulario);
         spinner_formularios.setAdapter(adapter2);
         Contrato contrato = new Contrato();
@@ -55,8 +56,9 @@ public class SelectFormFragment extends Fragment {
         //byte[] data = contrato.getConFoto1().getBytes();
         Bitmap bmp = BitmapFactory.decodeByteArray(contrato.getFoto1(), 0, contrato.getFoto1().length);
         iVFoto.setImageBitmap(bmp);
-        return  rootView;
+        return rootView;
     }
+
     public List<Contrato> listContratos() {
         QueryBuilder qb = contratoDao.queryBuilder();
         qb.where(ContratoDao.Properties.Id.eq(1));

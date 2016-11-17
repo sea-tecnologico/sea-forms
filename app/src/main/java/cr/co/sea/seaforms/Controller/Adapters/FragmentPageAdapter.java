@@ -24,9 +24,10 @@ import cr.co.sea.seaforms.Controller.ePestanas;
  * o responsible for making a View for each item in the data set.
 * */
 public class FragmentPageAdapter extends FragmentPagerAdapter {
-    private String[] tabTitle = new String[]{"Datos Personales","Dirección","Métodos de pago","Anexos","Datos Genericos"};
+    private String[] tabTitle = new String[]{"Datos Personales", "Dirección", "Métodos de pago", "Anexos", "Datos Genericos"};
     private Context context;
-    private  int pageCount = 5;
+    private int pageCount = 5;
+
     public FragmentPageAdapter(FragmentManager fm, Context context) {
         super(fm);
         this.context = context;
@@ -36,7 +37,7 @@ public class FragmentPageAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         ePestanas pestanas = ePestanas.values()[position]; // Para usar enum,
-        switch (pestanas){
+        switch (pestanas) {
 
             case DATOS_PERSONALES:
                 return new DatosPersonalesFormFragment();
@@ -65,7 +66,6 @@ public class FragmentPageAdapter extends FragmentPagerAdapter {
 
         return tabTitle[position];
     }
-
 
 
 }

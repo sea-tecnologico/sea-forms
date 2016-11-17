@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import cr.co.sea.seaforms.DAO.DaoSession;
 import cr.co.sea.seaforms.R;
 
 import static android.app.Activity.RESULT_OK;
+import static cr.co.sea.seaforms.Controller.ePestanas.DATOS_GENERICOS;
 import static cr.co.sea.seaforms.Model.Contrato.getContratoSingleton;
 
 /**
@@ -37,12 +39,15 @@ public class AnexosFormFragment extends Fragment {
     public DaoMaster daoMaster;
     public DaoSession daoSession;
     public ContratoDao contratoDao;
+    TabLayout tabhost;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, final Bundle savedInstanceState) {
 
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_fotos,container,false);
-        ivGuargar = (ImageView)rootView.findViewById(R.id.imgvGuardaFotos);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_fotos, container, false);
+        ivGuargar = (ImageView) rootView.findViewById(R.id.imgvGuardaFotos);
+        tabhost = (TabLayout) getActivity().findViewById(R.id.tab_layout);
          /*Prueba de base de datos local*/
         helper = new DaoMaster.DevOpenHelper(rootView.getContext(), "eForms_db", null);
         SQLiteDatabase db = helper.getWritableDatabase();
@@ -50,7 +55,7 @@ public class AnexosFormFragment extends Fragment {
         daoSession = daoMaster.newSession();
         contratoDao = daoSession.getContratoDao();
         /*********************************/
-        foto1=(ImageView)rootView.findViewById(R.id.imvFoto1);
+        foto1 = (ImageView) rootView.findViewById(R.id.imvFoto1);
         foto1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,7 +64,7 @@ public class AnexosFormFragment extends Fragment {
                 startActivityForResult(intent, 0);
             }
         });
-        foto2=(ImageView)rootView.findViewById(R.id.imvFoto2);
+        foto2 = (ImageView) rootView.findViewById(R.id.imvFoto2);
         foto2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,7 +73,7 @@ public class AnexosFormFragment extends Fragment {
                 startActivityForResult(intent, 0);
             }
         });
-        foto3=(ImageView)rootView.findViewById(R.id.imvFoto3);
+        foto3 = (ImageView) rootView.findViewById(R.id.imvFoto3);
         foto3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,7 +82,7 @@ public class AnexosFormFragment extends Fragment {
                 startActivityForResult(intent, 0);
             }
         });
-        foto4=(ImageView)rootView.findViewById(R.id.imvFoto4);
+        foto4 = (ImageView) rootView.findViewById(R.id.imvFoto4);
         foto4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,21 +94,22 @@ public class AnexosFormFragment extends Fragment {
         ivGuargar.setOnClickListener(new View.OnClickListener() {
             String bandera = "";
             String campos = "";
+
             @Override
             public void onClick(View v) {
 
                 contratoDao.insertOrReplace(getContratoSingleton());
-
-                }
+                tabhost.getTabAt(DATOS_GENERICOS.getValue()).select();
+            }
         });
-        return  rootView;
+        return rootView;
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(resultCode == RESULT_OK) {
+        if (resultCode == RESULT_OK) {
             Bitmap bp = (Bitmap) data.getExtras().get("data");
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
             byte[] byteArray;
@@ -112,36 +118,34 @@ public class AnexosFormFragment extends Fragment {
                     foto1.setBackgroundResource(0);
                     foto1.setImageBitmap(bp);
                     bp.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                    byteArray = stream.toByteArray(); // Este es el objeto que debo guardar en la base de datos local
+                    byteArray = stream.toByteArray(); // Este es el objeto que debo btnSiguiente en la base de datos local
                     getContratoSingleton().setFoto1(byteArray);
                     break;
                 case 2:
                     foto2.setBackgroundResource(0);
                     foto2.setImageBitmap(bp);
                     bp.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                    byteArray = stream.toByteArray(); // Este es el objeto que debo guardar en la base de datos local
+                    byteArray = stream.toByteArray(); // Este es el objeto que debo btnSiguiente en la base de datos local
                     getContratoSingleton().setFoto2(byteArray);
                     break;
                 case 3:
                     foto3.setBackgroundResource(0);
                     foto3.setImageBitmap(bp);
                     bp.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                    byteArray = stream.toByteArray(); // Este es el objeto que debo guardar en la base de datos local
+                    byteArray = stream.toByteArray(); // Este es el objeto que debo btnSiguiente en la base de datos local
                     getContratoSingleton().setFoto3(byteArray);
                     break;
                 case 4:
                     foto4.setBackgroundResource(0);
                     foto4.setImageBitmap(bp);
                     bp.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                    byteArray = stream.toByteArray(); // Este es el objeto que debo guardar en la base de datos local
+                    byteArray = stream.toByteArray(); // Este es el objeto que debo btnSiguiente en la base de datos local
                     getContratoSingleton().setFoto4(byteArray);
                     break;
                 default:
                     break;
             }
         }
-
-
 
 
     }

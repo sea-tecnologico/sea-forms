@@ -34,13 +34,14 @@ import cr.co.sea.seaforms.R;
 public class GenericosFormFragment extends Fragment {
     Button guardar;
     RadDataForm form;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, final Bundle savedInstanceState) {
           /*Creando el form dinamicamente con TELERIC leyendo archivo json*/
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_custom_form,container,false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_custom_form, container, false);
         form = new RadDataForm(this.getActivity());
-       // form = (RadDataForm) rootView.findViewById(R.id.RadDataFormCustomForm);
+        // form = (RadDataForm) rootView.findViewById(R.id.RadDataFormCustomForm);
         Button guardar = new Button(this.getActivity());
         guardar.setText("Guardar documento");
         String json = loadJSONFromAsset(R.raw.generico_extended);
@@ -59,20 +60,21 @@ public class GenericosFormFragment extends Fragment {
 
         /*obtiene los campos del formulario desde el archivo json*/
 
-        rootView.addView(form,1050,1400);
+        rootView.addView(form, 1050, 1400);
         rootView.addView(guardar);
 
-       // guardar=(Button)rootView.findViewById (R.id.btn_customForm);
+        // btnSiguiente=(Button)rootView.findViewById (R.id.btn_customForm);
         guardar.setOnClickListener(new View.OnClickListener() {
             String bandera = "";
             String campos = "";
+
             @Override
             public void onClick(View v) {
                 String json = form.getEntity().getSourceObject().toString();
                 try {
                     HashMap<String, Object> map = getHashMapFromJson(json);
-                   // SortedSet<String> keys = new TreeSet<String>(map.keySet()); // Ordenando al hash map
-                   // for (String key : keys) {
+                    // SortedSet<String> keys = new TreeSet<String>(map.keySet()); // Ordenando al hash map
+                    // for (String key : keys) {
                     //Log.i("JsonTelerik",String.valueOf(map.get("key")));
                     /*getClienteSingleton().setCliTipoIdentificacion(String.valueOf(map.get("TipoIdentificacion")));
                     getClienteSingleton().setCliIdentificacion(String.valueOf(map.get("Identificacion")));
@@ -95,13 +97,13 @@ public class GenericosFormFragment extends Fragment {
                 }
             }
         });
-        return  rootView;
+        return rootView;
     }
 
     private HashMap<String, Object> getHashMapFromJson(String json) throws JSONException {
         HashMap<String, Object> map = new HashMap<String, Object>();
         JSONObject jsonObject = new JSONObject(json);
-        for (Iterator<String> it = jsonObject.keys(); it.hasNext();) {
+        for (Iterator<String> it = jsonObject.keys(); it.hasNext(); ) {
             String key = it.next();
             map.put(key, jsonObject.get(key));
         }

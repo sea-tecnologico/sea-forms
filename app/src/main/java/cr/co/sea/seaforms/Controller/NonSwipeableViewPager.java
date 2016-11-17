@@ -14,7 +14,7 @@ import java.lang.reflect.Field;
  * Esta clase se utiliza para desactivar los efectos swipe entre tabs
  */
 
-public class NonSwipeableViewPager extends ViewPager{
+public class NonSwipeableViewPager extends ViewPager {
 
     public NonSwipeableViewPager(Context context) {
         super(context);
